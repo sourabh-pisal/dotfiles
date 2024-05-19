@@ -128,9 +128,16 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
+# fzf zsh integration
+eval "$(fzf --zsh)"
+
 # Set default editor to nvim
 export EDITOR=nvim
 export VISUAL=nvim
 
 # Set dotfiles dir
 alias dotfiles='/usr/bin/git --git-dir=/home/sourabh/dotfiles/ --work-tree=/home/sourabh'
+
+
+# set alias
+alias v='nvim'
