@@ -7,7 +7,7 @@ unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/sourabh/.zshrc'
+zstyle :compinstall filename "/home/sourabh/.zshrc"
 
 autoload -Uz compinit
 compinit
@@ -49,12 +49,12 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment one of the following lines to change the auto-update behavior
-# zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
-# zstyle ':omz:update' mode reminder  # just remind me to update when it's time
+# zstyle ":omz:update" mode disabled  # disable automatic updates
+# zstyle ":omz:update" mode auto      # update automatically without asking
+# zstyle ":omz:update" mode reminder  # just remind me to update when it"s time
 
 # Uncomment the following line to change how often to auto-update (in days).
-# zstyle ':omz:update' frequency 13
+# zstyle ":omz:update" frequency 13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS="true"
@@ -84,7 +84,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # You can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
+# see "man strftime" for details.
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
@@ -108,9 +108,9 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR="vim"
 # else
-#   export EDITOR='mvim'
+#   export EDITOR="mvim"
 # fi
 
 # Compilation flags
@@ -136,8 +136,11 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # Set dotfiles dir
-alias dotfiles='/usr/bin/git --git-dir=/home/sourabh/dotfiles/ --work-tree=/home/sourabh'
+alias config="/usr/bin/git --git-dir=/home/sourabh/dotfiles/ --work-tree=/home/sourabh"
 
+# Set config auto complition
+complete -C "/usr/bin/git" config 
 
 # set alias
-alias v='nvim'
+alias v="nvim"
+
