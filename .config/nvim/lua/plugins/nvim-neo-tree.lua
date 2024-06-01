@@ -20,6 +20,6 @@ return {
       })
 
       vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", {})
-      vim.keymap.set("n", "<leader>", ":Neotree buffers<CR>", {})
+      vim.keymap.set("n", "<leader>b", ":Neotree buffers<CR>", {})
     end
 }
