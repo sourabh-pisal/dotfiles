@@ -136,7 +136,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # Set dotfiles dir
-alias dotfiles="/usr/bin/git --git-dir=/home/sourabh/dotfiles/ --work-tree=/home/sourabh"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME/sourabh"
 
 # Set config auto complition
 complete -C "/usr/bin/git" config 
