@@ -1,0 +1,46 @@
+[[colors.indexed_colors]]
+color = "#b15c00"
+index = 16
+
+[[colors.indexed_colors]]
+color = "#c64343"
+index = 17
+
+[colors.bright]
+black = "#a1a6c5"
+blue = "#2e7de9"
+cyan = "#007197"
+green = "#587539"
+magenta = "#9854f1"
+red = "#f52a65"
+white = "#3760bf"
+yellow = "#8c6c3e"
+
+[colors.normal]
+black = "#e9e9ed"
+blue = "#2e7de9"
+cyan = "#007197"
+green = "#587539"
+magenta = "#9854f1"
+red = "#f52a65"
+white = "#6172b0"
+yellow = "#8c6c3e"
+
+[colors.primary]
+background = "#e1e2e7"
+foreground = "#3760bf"
+
+[font]
+size = 12
+
+[font.bold]
+family = "MesloLGS NF"
+
+[font.bold_italic]
+family = "MesloLGS NF"
+
+[font.italic]
+family = "MesloLGS NF"
+
+[font.normal]
+family = "MesloLGS NF"
