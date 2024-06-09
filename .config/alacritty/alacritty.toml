@@ -42,5 +42,8 @@ family = "MesloLGS NF"
 [font.italic]
 family = "MesloLGS NF"
 
+[window]
+dynamic_padding = true
+
 [font.normal]
 family = "MesloLGS NF"
