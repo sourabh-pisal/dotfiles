@@ -135,6 +135,9 @@ eval "$(fzf --zsh)"
 export EDITOR=nvim
 export VISUAL=nvim
 
+# disable homebrew env hints
+export HOMEBREW_NO_ENV_HINTS=TRUE
+
 # Set dotfiles dir
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
 
