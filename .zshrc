@@ -13,9 +13,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-#Homebrew
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -128,18 +125,13 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# fzf zsh integration
-eval "$(fzf --zsh)"
-
 # Set default editor to nvim
 export EDITOR=nvim
 export VISUAL=nvim
 
-# disable homebrew env hints
-export HOMEBREW_NO_ENV_HINTS=TRUE
 
 # Set dotfiles dir
-alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles/ --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
 
 # Set config auto complition
 complete -C "/usr/bin/git" config 
