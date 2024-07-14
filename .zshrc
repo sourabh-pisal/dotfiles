@@ -143,6 +143,9 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 --color=info:#2e7de9,prompt:#007197,pointer:#007197 \
 --color=marker:#587539,spinner:#587539,header:#587539"
 
+# export gnome-keybings
+alias export-keybindings="dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > ~/.config/keybindings/media-keys && dconf dump /org/gnome/desktop/wm/keybindings/ > ~/.config/keybindings/wm-keybindings && dconf dump /org/gnome/shell/keybindings/ > ~/.config/keybindings/shell-keybindings && dconf dump /org/gnome/mutter/keybindings/ > ~/.config/keybindings/mutter-keybindings && dconf dump /org/gnome/mutter/wayland/keybindings/ > ~/.config/keybindings/wayland-keybindings"
+
 # set alias
 alias v="nvim"
 alias c="clear"

@@ -1,0 +1,20 @@
+[/]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/']
+help=@as []
+logout=@as []
+magnifier=@as []
+magnifier-zoom-in=@as []
+magnifier-zoom-out=@as []
+screenreader=@as []
+screensaver=@as []
+terminal=@as []
+
+[custom-keybindings/custom0]
+binding='<Super>Return'
+command='alacritty'
+name='alacritty'
+
+[custom-keybindings/custom1]
+binding='<Super>f'
+command='firefox'
+name='firefox'
