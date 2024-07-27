@@ -96,6 +96,10 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
+source <(fzf --zsh)
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -152,3 +156,5 @@ alias c="clear"
 
 # use vim-mode
 set -o vi
+
+
