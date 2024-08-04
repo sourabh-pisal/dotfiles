@@ -154,6 +154,9 @@ alias export-keybindings="dconf dump /org/gnome/settings-daemon/plugins/media-ke
 alias v="nvim"
 alias c="clear"
 
+# update
+alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh && brew upgrade"
+
 # use vim-mode
 set -o vi
 
