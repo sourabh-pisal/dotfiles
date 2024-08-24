@@ -142,10 +142,11 @@ complete -C "/usr/bin/git" config
 
 # fzf theme
 export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
---color=fg:#3760bf,bg:#e1e2e7,hl:#b15c00 \
---color=fg+:#3760bf,bg+:#c4c8da,hl+:#b15c00 \
---color=info:#2e7de9,prompt:#007197,pointer:#007197 \
---color=marker:#587539,spinner:#587539,header:#587539"
+--color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
+--color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
+--color=marker:#babbf1,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284 \
+--color=selected-bg:#51576d \
+--multi"
 
 # export gnome-keybings
 alias export-keybindings="dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > ~/.config/keybindings/media-keys && dconf dump /org/gnome/desktop/wm/keybindings/ > ~/.config/keybindings/wm-keybindings && dconf dump /org/gnome/shell/keybindings/ > ~/.config/keybindings/shell-keybindings && dconf dump /org/gnome/mutter/keybindings/ > ~/.config/keybindings/mutter-keybindings && dconf dump /org/gnome/mutter/wayland/keybindings/ > ~/.config/keybindings/wayland-keybindings"
