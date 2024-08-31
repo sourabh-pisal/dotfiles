@@ -10,7 +10,6 @@
         fzf
         lazygit
         tmux
-        nerdfonts
       ];
     };
   };

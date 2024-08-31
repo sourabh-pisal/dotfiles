@@ -96,8 +96,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 source <(fzf --zsh)
 
 # User configuration
@@ -156,7 +154,10 @@ alias v="nvim"
 alias c="clear"
 
 # update
-alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh && brew upgrade"
+alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh && nix-env --upgrade"
+
+# install packages
+alias install="nix-env -iA nixpkgs.myPackages"
 
 # use vim-mode
 set -o vi
