@@ -1,165 +1,71 @@
-# Lines configured by zsh-newuser-install
+# -------------------- Environment variales --------------------
+
+# Set vim as an editor
+set -o vi
+
+export VISUAL=nvim
+export EDITOR=nvim
+
+# Path to your Oh My Zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="robbyrussell"
+
+plugins=(git)
+
+# -------------------- Path configuration --------------------
+setopt extended_glob null_glob
+
+path=(
+    $path                           
+    $HOME/bin
+    $HOME/.local/bin
+)
+
+# Remove duplicate entries and non-existent directories
+typeset -U path
+path=($^path(N-/))
+
+export PATH
+
+# -------------------- History --------------------
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-setopt autocd extendedglob nomatch notify
-unsetopt beep
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
-zstyle :compinstall filename "/home/sourabh/.zshrc"
 
-autoload -Uz compinit
-compinit
-# End of lines added by compinstall
+setopt HIST_IGNORE_SPACE
+setopt HIST_IGNORE_DUPS
+setopt SHARE_HISTORY
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# -------------------- Aliases --------------------
+alias v="nvim"
+alias c="clear"
+alias t="tmux"
+alias ta="tmux attach"
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+# Git
+alias gp="git pull"
+alias gs="git status"
+alias lg="lazygit"
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+# Package management
+alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh && nix-env --upgrade"
+alias install="nix-env -iA nixpkgs.myPackages"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# Set dotfiles directory
+alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
 
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in $ZSH/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+# ls
+alias ls="ls --color=auto"
+alias la="ls -lathr"
 
-# Uncomment the following line to use case-sensitive completion.
-# CASE_SENSITIVE="true"
-
-# Uncomment the following line to use hyphen-insensitive completion.
-# Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
-
-# Uncomment one of the following lines to change the auto-update behavior
-# zstyle ":omz:update" mode disabled  # disable automatic updates
-# zstyle ":omz:update" mode auto      # update automatically without asking
-# zstyle ":omz:update" mode reminder  # just remind me to update when it"s time
-
-# Uncomment the following line to change how often to auto-update (in days).
-# zstyle ":omz:update" frequency 13
-
-# Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS="true"
-
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
-
-# Uncomment the following line to disable auto-setting terminal title.
-# DISABLE_AUTO_TITLE="true"
-
-# Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
-
-# Uncomment the following line to display red dots whilst waiting for completion.
-# You can also set it to another string to have that shown instead of the default red dots.
-# e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
-# Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-# COMPLETION_WAITING_DOTS="true"
-
-# Uncomment the following line if you want to disable marking untracked files
-# under VCS as dirty. This makes repository status check for large repositories
-# much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Uncomment the following line if you want to change the command execution time
-# stamp shown in the history command output.
-# You can set one of the optional three formats:
-# "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
-# or set a custom format using the strftime function format specifications,
-# see "man strftime" for details.
-# HIST_STAMPS="mm/dd/yyyy"
-
-# Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
-
-# Which plugins would you like to load?
-# Standard plugins can be found in $ZSH/plugins/
-# Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-
+# -------------------- Sourcing --------------------
 source $ZSH/oh-my-zsh.sh
 
 source <(fzf --zsh)
 
-# User configuration
+# -------------------- Completion --------------------
+autoload -Uz compinit
+compinit -u
 
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR="vim"
-# else
-#   export EDITOR="mvim"
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# Set default editor to nvim
-export EDITOR=nvim
-export VISUAL=nvim
-
-
-# Set dotfiles dir
-alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
-
-# Set config auto complition
-complete -C "/usr/bin/git" config 
-
-# fzf theme
-export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
---color=bg+:#414559,bg:#303446,spinner:#f2d5cf,hl:#e78284 \
---color=fg:#c6d0f5,header:#e78284,info:#ca9ee6,pointer:#f2d5cf \
---color=marker:#babbf1,fg+:#c6d0f5,prompt:#ca9ee6,hl+:#e78284 \
---color=selected-bg:#51576d \
---multi"
-
-# export gnome-keybings
-alias export-keybindings="dconf dump /org/gnome/settings-daemon/plugins/media-keys/ > ~/.config/keybindings/media-keys && dconf dump /org/gnome/desktop/wm/keybindings/ > ~/.config/keybindings/wm-keybindings && dconf dump /org/gnome/shell/keybindings/ > ~/.config/keybindings/shell-keybindings && dconf dump /org/gnome/mutter/keybindings/ > ~/.config/keybindings/mutter-keybindings && dconf dump /org/gnome/mutter/wayland/keybindings/ > ~/.config/keybindings/wayland-keybindings"
-
-# set alias
-alias v="nvim"
-alias c="clear"
-
-# update
-alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh && nix-env --upgrade"
-
-# install packages
-alias install="nix-env -iA nixpkgs.myPackages"
-
-# use vim-mode
-set -o vi
-
-
+zstyle ':completion:*' menu select
