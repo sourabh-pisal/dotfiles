@@ -35,10 +35,10 @@ vim.opt.updatetime = 50
 vim.opt.colorcolumn = "80"
 
 -- nvim - tmux navigation
-vim.keymap.set("n", "<c-k>", ":wincmd k<CR>") 
-vim.keymap.set("n", "<c-j>", ":wincmd j<CR>") 
-vim.keymap.set("n", "<c-h>", ":wincmd h<CR>") 
-vim.keymap.set("n", "<c-l>", ":wincmd l<CR>") 
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd h<CR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 
 -- move lines vertically in visual model
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -60,5 +60,3 @@ vim.keymap.set("n", "<leader>p", "\"+p")
 -- delete into void
 vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("v", "<leader>d", "\"_d")
-
-
