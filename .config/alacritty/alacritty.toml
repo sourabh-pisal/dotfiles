@@ -33,3 +33,6 @@ size = 12
 [window]
 dynamic_padding = true
 decorations = "none"
+
+[font.normal]
+family = "MesloLGS Nerd Font"
