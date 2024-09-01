@@ -11,7 +11,7 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
-plugins=(git)
+plugins=(git sudo tmux)
 
 # -------------------- Path configuration --------------------
 setopt extended_glob null_glob
@@ -40,8 +40,6 @@ setopt SHARE_HISTORY
 # -------------------- Aliases --------------------
 alias v="nvim"
 alias c="clear"
-alias t="tmux"
-alias ta="tmux attach"
 
 # Git
 alias gp="git pull"
