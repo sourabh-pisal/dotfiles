@@ -47,8 +47,7 @@ alias gs="git status"
 alias lg="lazygit"
 
 # Package management
-alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh && nix-env --upgrade"
-alias install="nix-env -iA nixpkgs.myPackages"
+alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
 
 # Set dotfiles directory
 alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
@@ -57,14 +56,10 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HO
 alias ls="ls --color=auto"
 alias la="ls -lathr"
 
-# devpod
-alias dup="devpod up . --dotfiles git@github.com:sourabh-pisal/dotfiles-devpod.git --ide none"
-alias dssh="devpod ssh"
-alias dstop="devpod stop"
-alias ddelete="devpod delete"
-
 # -------------------- Sourcing --------------------
 source $ZSH/oh-my-zsh.sh
+
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 source <(fzf --zsh)
 
