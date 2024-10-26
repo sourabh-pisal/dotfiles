@@ -186,6 +186,10 @@ input "type:pointer" {
     accel_profile "flat"
 }
 
+input * {
+  xkb_numlock enabled
+}
+
 # Status Bar:
 bar {
     position top
