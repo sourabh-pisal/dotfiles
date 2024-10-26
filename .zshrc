@@ -59,8 +59,6 @@ alias la="ls -lathr"
 # -------------------- Sourcing --------------------
 source $ZSH/oh-my-zsh.sh
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-
 source <(fzf --zsh)
 
 # -------------------- Completion --------------------
