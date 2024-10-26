@@ -12,13 +12,16 @@ set $menu wofi --show drun
 
 include /etc/sway/config-vars.d/*
 
-
 default_border pixel 3
 default_floating_border pixel 3
 smart_borders on
 
-# Turn on night-mode
-exec_always wlsunset
+# Start applications
+## Turn on night-mode
+exec wlsunset
+
+## Turn notification daemon
+exec swaync
 
 # Border colors
 client.focused          #ebdbb2 #ebdbb2 #1d2021 #fe8019	
@@ -48,11 +51,14 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.5 @DEFAU
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-
 bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
+# Show notification centre
+bindsym $mod+Shift+n exec swaync-client -t -sw
+
 # Logout
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Logout?' -B 'Yes' 'swaymsg exit'
 
 # Lock screen
-bindsym $mod+Shift+t exec swaylock -f -c 000000
+bindsym $mod+Shift+t exec swaylock -f -c 000000 -i /home/sourabh/Pictures/wallpaper.jpg
 
 # Shutdown
 bindsym $mod+Shift+s exec swaynag -t warning -m 'Shutdown?' -B 'Yes' 'sudo shutdown -h now'
