@@ -1,5 +1,4 @@
 # Main settings
-set $mod Mod4
 font pango: MesloLGSNerdFont Medium 12
 
 gaps inner 5
@@ -7,8 +6,11 @@ gaps outer 0
 smart_gaps off
 focus_follows_mouse no
 
-set $term alacritty
+## Set env variables
+set $mod Mod4
+set $term kitty 
 set $menu wofi --show drun
+set $wallpaper '/home/sourabh/Pictures/wallpaper.jpg'
 
 include /etc/sway/config-vars.d/*
 
@@ -22,6 +24,13 @@ exec wlsunset
 
 ## Turn notification daemon
 exec swaync
+
+## Start swayidle
+exec swayidle -w \
+         timeout 300 'swaylock -f -c 000000 -i $wallpaper' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         timeout 900 'systemctl suspend ' \
+         before-sleep 'swaylock -f -c 000000 -i $wallpaper'
 
 # Border colors
 client.focused          #ebdbb2 #ebdbb2 #1d2021 #fe8019	
@@ -58,7 +67,7 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 bindsym $mod+Shift+e exec swaynag -t warning -m 'Logout?' -B 'Yes' 'swaymsg exit'
 
 # Lock screen
-bindsym $mod+Shift+t exec swaylock -f -c 000000 -i /home/sourabh/Pictures/wallpaper.jpg
+bindsym $mod+Shift+t exec swaylock -f -c 000000 -i $wallpaper 
 
 # Shutdown
 bindsym $mod+Shift+s exec swaynag -t warning -m 'Shutdown?' -B 'Yes' 'sudo shutdown -h now'
@@ -176,7 +185,7 @@ bindsym $mod+r mode "resize"
 
 # Output configuration
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-output * bg /home/sourabh/Pictures/wallpaper.jpg fill
+output * bg $wallpaper fill
 
 ### Input configuration
 input "type:touchpad" {
