@@ -32,7 +32,7 @@ vim.opt.isfname:append("@-@")
 
 vim.opt.updatetime = 50
 
-vim.opt.colorcolumn = "80"
+vim.opt.colorcolumn = "120"
 
 -- nvim - tmux navigation
 vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
@@ -51,6 +51,10 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 -- keep curson in the middle during searching
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+
+-- scroll by 5 lines
+vim.keymap.set("n", "<C-e>", "5<C-e>")
+vim.keymap.set("n", "<C-y>", "5<C-y>")
 
 -- yank/paste to clipboard
 vim.keymap.set("n", "<leader>y", "\"+y")
