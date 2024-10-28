@@ -6,6 +6,9 @@ set -o vi
 export VISUAL=nvim
 export EDITOR=nvim
 
+export WLR_SCENE_DEBUG_DAMAGE=rerender
+export WLR_SCENE_DISABLE_VISIBILITY=1
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -47,7 +50,7 @@ alias gs="git status"
 alias lg="lazygit"
 
 # Package management
-alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
+alias update="sudo pacman -Syu"
 
 # Set dotfiles directory
 alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
