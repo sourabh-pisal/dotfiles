@@ -2,7 +2,7 @@
   "height": 24,
   "spacing": 15,
   "modules-left": [ "sway/workspaces" ],
-  "modules-center": ["sway/window"],
+  // "modules-center": ["sway/window"],
   "modules-right": [
     "pulseaudio",
     "cpu",
@@ -12,8 +12,8 @@
     "tray"
   ],
   "pulseaudio": {
-    "format": "{volume}% {icon} {format_source}",
-    "format-muted": " {format_source}",
+    "format": "| {volume}% {icon} {format_source}",
+    "format-muted": "|  {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": " ",
     "format-icons": {
@@ -38,7 +38,7 @@
   },
   "clock": {
     "format": "| {:%I:%M %p} ",
-    "format-alt": "{:%A, %b %d} ",
+    "format-alt": "| {:%A, %b %d} ",
     "tooltip": false
   }
 }
