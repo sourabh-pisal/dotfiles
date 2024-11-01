@@ -1,0 +1,44 @@
+{
+  "height": 24,
+  "spacing": 15,
+  "modules-left": [ "sway/workspaces" ],
+  "modules-center": ["sway/window"],
+  "modules-right": [
+    "pulseaudio",
+    "cpu",
+    "memory",
+    "temperature",
+    "clock",
+    "tray"
+  ],
+  "pulseaudio": {
+    "format": "{volume}% {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": " ",
+    "format-icons": {
+      "default": [" ", " ", " "]
+    },
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "| {usage}%  ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "| {}%  ",
+    "tooltip": false
+  },
+  "temperature": {
+    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "critical-threshold": 80,
+    "format": "| {temperatureC}°C {icon}",
+    "format-icons": [""],
+    "tooltip": false
+  },
+  "clock": {
+    "format": "| {:%I:%M %p} ",
+    "format-alt": "{:%A, %b %d} ",
+    "tooltip": false
+  }
+}
