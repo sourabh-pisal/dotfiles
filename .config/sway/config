@@ -1,59 +1,69 @@
-# Main settings
+################################################################################
+#                            Main Settings                                      #
+################################################################################
+# Set font for Sway
 font pango: MesloLGSNerdFont Medium 12
 
+# Window gaps configuration
 gaps inner 5
 gaps outer 0
 smart_gaps off
 focus_follows_mouse no
 
-## Set env variables
+################################################################################
+#                            Environment Variables                             #
+################################################################################
+# Set environment variables for Sway
 set $mod Mod4
-set $term foot 
+set $term foot
 set $menu wofi --show drun
-set $lockscreen '/home/sourabh/Pictures/lockscreen.png'
 set $wallpaper '/home/sourabh/Pictures/wallpaper.jpg'
 
-include /etc/sway/config-vars.d/*
-
+# Set default border style for windows
 default_border pixel 3
 default_floating_border pixel 3
 smart_borders on
 
-# Start applications
-## Turn on night-mode
+################################################################################
+#                            Start Applications                                #
+################################################################################
+# Turn on night mode with wlsunset
 exec wlsunset
 
-## Turn notification daemon
+# Start notification daemon
 exec swaync
 
-## Start waybar
+# Start Waybar for system status
 exec waybar
 
-## Start swayidle
+# Configure swayidle to handle idle and sleep behaviors
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000 -i $lockscreen' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         timeout 900 'systemctl suspend ' \
-         before-sleep 'swaylock -f -c 000000 -i $lockscreen'
+    timeout 300 'swaylock -f -c 000000 -i $wallpaper' \
+    timeout 600 'swaymsg "output * power off"' \
+    resume 'swaymsg "output * power on"' \
+    timeout 900 'systemctl suspend' \
+    before-sleep 'swaylock -f -c 000000 -i $wallpaper'
 
-# Border colors
-client.focused          #ebdbb2 #ebdbb2 #1d2021 #fe8019	
-client.unfocused        #282828 #282828	#83a598 #1d2021		
+################################################################################
+#                            Border Colors                                     #
+################################################################################
+# Set colors for various client states
+client.focused          #ebdbb2 #ebdbb2 #1d2021 #fe8019  
+client.unfocused        #282828 #282828 #83a598 #1d2021  
 client.focused_inactive #282828 #282828 #282828 
-client.placeholder      #fabd2f	#fabd2f	#1d2021
-client.urgent           #d3869b	#d3869b	#1d2021	
+client.placeholder      #fabd2f #fabd2f #1d2021
+client.urgent           #d3869b #d3869b #1d2021  
 client.background       #282828
 
+################################################################################
+#                            Key Bindings                                      #
+################################################################################
 
-# Key Bindings
-
-# Basic navigation 
+# Basic Navigation
 set $left h
 set $down j
 set $up k
 set $right l
-
-# Basics:
 
 # Brightness control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
@@ -64,60 +74,55 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id wpctl set-volume -l 1.5 @DEFAU
 bindsym XF86AudioLowerVolume exec --no-startup-id wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%-
 bindsym XF86AudioMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
-# Show notification centre
+# Show notification center
 bindsym $mod+Shift+n exec swaync-client -t -sw
 
-# Bind power button key to logout
-bindsym XF86PowerOff exec swaymsg exit
-
 # Lock screen
-bindsym $mod+Shift+w exec swaylock -f -c 000000 -i $lockscreen
+bindsym $mod+Shift+w exec swaylock -f -c 000000 -i $wallpaper
 
-# Merge exit options
+# Exit options with swaynag
 bindsym $mod+Shift+x exec swaynag -t warning -m 'Exit Sway?' -B 'Logout' 'swaymsg exit' -B 'Shutdown' 'sudo shutdown -h now' -B 'Suspend' 'systemctl suspend'
 
 # Exit Sway
 bindsym $mod+Shift+e exec swaymsg exit
 
-# Mirophone control
+# Microphone control
 bindsym XF86AudioMicMute exec --no-startup-id wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle
 
-# Start a terminal
+# Launch terminal
 bindsym $mod+Return exec $term
 
 # Kill focused window
 bindsym $mod+Shift+q kill
 
-# Start your launcher
+# Start application launcher
 bindsym $mod+d exec $menu
 
-# Drag floating windows by holding down $mod and left mouse button.
-# Resize them with right mouse button + $mod.
-# Despite the name, also works for non-floating windows.
-# Change normal to inverse to use left mouse button for resizing and right
-# mouse button for dragging.
+# Resize and drag floating windows
 floating_modifier $mod normal
 
-# Reload the configuration file
+# Reload configuration
 bindsym $mod+Shift+c reload
 
-# Moving around:
-# Move your focus around
+################################################################################
+#                            Window Movement & Focus                           #
+################################################################################
+# Move window focus using keyboard
 bindsym $mod+$left focus left
 bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# Move the focused window with the same, but add Shift
+# Move focused window with Shift key
 bindsym $mod+Shift+$left move left
 bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-
-# Workspaces:
-
-# Switch to workspace
+################################################################################
+#                            Workspace Management                              #
+################################################################################
+# Switch to workspace 1-10
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -129,7 +134,7 @@ bindsym $mod+8 workspace number 8
 bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
-# Move focused container to workspace
+# Move focused container to specific workspace
 bindsym $mod+Shift+1 move container to workspace number 1; workspace number 1
 bindsym $mod+Shift+2 move container to workspace number 2; workspace number 2
 bindsym $mod+Shift+3 move container to workspace number 3; workspace number 3
@@ -141,41 +146,28 @@ bindsym $mod+Shift+8 move container to workspace number 8; workspace number 8
 bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
 
-# Layout stuff:
-
-# You can "split" the current object of your focus with
-# $mod+b or $mod+v, for horizontal and vertical splits
-# respectively.
+################################################################################
+#                            Layout and Fullscreen                            #
+################################################################################
+# Horizontal and vertical splits
 bindsym $mod+b splith
 bindsym $mod+v splitv
 
-# Switch the current container between different layout styles
+# Toggle between split and tabbed layout
 bindsym $mod+e layout toggle split
 
-# Make the current focus fullscreen
+# Fullscreen current window
 bindsym $mod+f fullscreen
 
-# Toggle the current focus between tiling and floating mode
+# Toggle between floating and tiling mode
 bindsym $mod+Shift+space floating toggle
 
-# Swap focus between the tiling area and the floating area
+# Swap focus between tiling and floating areas
 bindsym $mod+space focus mode_toggle
 
-# Move focus to the parent container
-bindsym $mod+a focus parent
-
-# Scratchpad:
-
-# Move the currently focused window to the scratchpad
-bindsym $mod+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
-
-
-# Resizing containers:
-
+################################################################################
+#                            Resizing Containers                              #
+################################################################################
 mode "resize" {
     bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
@@ -188,11 +180,16 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# Output configuration
-# You can get the names of your outputs by running: swaymsg -t get_outputs
+################################################################################
+#                            Output Configuration                             #
+################################################################################
+# Set background image for outputs
 output * bg $wallpaper fill
 
-### Input configuration
+################################################################################
+#                            Input Configuration                              #
+################################################################################
+# Touchpad configuration
 input "type:touchpad" {
     tap enabled         # enables click-on-tap
     tap_button_map lrm  # tap with 1 finger = left click, 2 fingers = right click, 3 fingers = middle click
@@ -201,13 +198,19 @@ input "type:touchpad" {
     natural_scroll enable
 }
 
+# Pointer (mouse) configuration
 input "type:pointer" {
     natural_scroll enable
     accel_profile "flat"
 }
 
+# General input settings
 input * {
-  xkb_numlock enabled
+    xkb_numlock enabled
 }
 
+################################################################################
+#                            Include Additional Config                         #
+################################################################################
+# Include any extra configuration from system-wide directory
 include /etc/sway/config.d/*
