@@ -2,7 +2,9 @@
   "height": 24,
   "spacing": 15,
   "modules-left": [ "sway/workspaces" ],
-  // "modules-center": ["sway/window"],
+  "sway/workspaces": {
+    "window-rewrite": {}
+  },
   "modules-right": [
     "pulseaudio",
     "cpu",
@@ -30,7 +32,7 @@
     "tooltip": false
   },
   "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
     "critical-threshold": 80,
     "format": "| {temperatureC}°C {icon}",
     "format-icons": [""],
