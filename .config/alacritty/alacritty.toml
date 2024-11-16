@@ -1,38 +1,61 @@
-# Default colors
+################################################################################
+#                            Color Scheme Configuration                        #
+################################################################################
+# Default colors for Alacritty terminal
 [colors.primary]
-# hard contrast background = = '#1d2021'
-background = '#282828'
-# soft contrast background = = '#32302f'
-foreground = '#ebdbb2'
+# Hard contrast background = '#1d2021'
+background = '#282828'  # Dark background color
+# Soft contrast background = '#32302f'
+foreground = '#ebdbb2'  # Light foreground (text) color
 
-# Normal colors
+################################################################################
+#                            Normal Colors                                      #
+################################################################################
+# Define the standard (non-bright) colors
 [colors.normal]
-black   = '#282828'
-red     = '#cc241d'
-green   = '#98971a'
-yellow  = '#d79921'
-blue    = '#458588'
-magenta = '#b16286'
-cyan    = '#689d6a'
-white   = '#a89984'
+black   = '#282828'  # black
+red     = '#cc241d'  # red
+green   = '#98971a'  # green
+yellow  = '#d79921'  # yellow
+blue    = '#458588'  # blue
+magenta = '#b16286'  # magenta
+cyan    = '#689d6a'  # cyan
+white   = '#a89984'  # white
 
-# Bright colors
+################################################################################
+#                            Bright Colors                                      #
+################################################################################
+# Define the bright colors for text highlighting, etc.
 [colors.bright]
-black   = '#928374'
-red     = '#fb4934'
-green   = '#b8bb26'
-yellow  = '#fabd2f'
-blue    = '#83a598'
-magenta = '#d3869b'
-cyan    = '#8ec07c'
-white   = '#ebdbb2'
+black   = '#928374'  # bright black (usually dark gray)
+red     = '#fb4934'  # bright red
+green   = '#b8bb26'  # bright green
+yellow  = '#fabd2f'  # bright yellow
+blue    = '#83a598'  # bright blue
+magenta = '#d3869b'  # bright magenta
+cyan    = '#8ec07c'  # bright cyan
+white   = '#ebdbb2'  # bright white (light gray)
 
+################################################################################
+#                            Font Configuration                                #
+################################################################################
+# Font settings
 [font]
-size = 12
-
-[window]
-dynamic_padding = true
-decorations = "none"
+size = 12  # Set font size to 12
 
 [font.normal]
-family = "MesloLGS Nerd Font"
+family = "MesloLGS Nerd Font"  # Font family
+
+################################################################################
+#                            Window Configuration                              #
+################################################################################
+# Window settings
+[window]
+dynamic_padding = true  # Enable dynamic padding
+decorations = "none"    # Disable window decorations
+
+################################################################################
+#                            Padding Configuration                             #
+################################################################################
+# Set padding for the terminal window (5px vertical, 10px horizontal)
+padding = { x = 10, y = 5 }
