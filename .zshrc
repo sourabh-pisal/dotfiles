@@ -88,7 +88,7 @@ alias ls="ls --color=auto"
 alias la="ls -lathr"
 
 # Radio streaming
-alias lofi="mpv --no-video --quiet $LOFI"
+alias lofi="mpv --no-video --quiet '$LOFI'"
 alias wspr="mpv --cache=yes --cache-secs=30 --demuxer-max-bytes=8192k --no-video --quiet --input-ipc-server=wspr '$WSPR'"
 
 ################################################################################
