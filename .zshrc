@@ -18,6 +18,11 @@ export EDITOR=nvim
 export WLR_SCENE_DEBUG_DAMAGE=rerender
 export WLR_SCENE_DISABLE_VISIBILITY=1
 
+# Enable desktop sharing for Wayland
+export MOZ_ENABLE_WAYLAND=1
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
+
 # Path to your Oh My Zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 
