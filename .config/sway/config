@@ -81,7 +81,7 @@ bindsym $mod+Shift+n exec swaync-client -t -sw
 bindsym $mod+Shift+w exec swaylock -f -c 000000 -i $wallpaper
 
 # Exit options with swaynag
-bindsym $mod+Shift+x exec swaynag -t warning -m 'Exit Sway?' -B 'Logout' 'swaymsg exit' -B 'Shutdown' 'sudo shutdown -h now' -B 'Suspend' 'systemctl suspend'
+bindsym $mod+Shift+x exec swaynag -t warning -m 'Exit Sway?' -B 'Logout' 'swaymsg exit' -B 'Reboot' 'sudo reboot' -B 'Shutdown' 'sudo shutdown -h now' -B 'Suspend' 'systemctl suspend'
 
 # Exit Sway
 bindsym $mod+Shift+e exec swaymsg exit
