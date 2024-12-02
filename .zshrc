@@ -6,6 +6,8 @@ if [ -f ~/.env ]; then
   export $(grep -v '^#' ~/.env | xargs)
 fi
 
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 ################################################################################
 #                             Environment Variables                            #
 ################################################################################
@@ -13,15 +15,16 @@ fi
 set -o vi
 export VISUAL=nvim
 export EDITOR=nvim
+export TERM=xterm-256color
 
-# Wayland debugging variables (for WLR-based compositors)
-export WLR_SCENE_DEBUG_DAMAGE=rerender
-export WLR_SCENE_DISABLE_VISIBILITY=1
+# Set rose-pine-dawn theme for FZF
+export FZF_DEFAULT_OPTS="
+	--color=fg:#797593,bg:#faf4ed,hl:#d7827e
+	--color=fg+:#575279,bg+:#f2e9e1,hl+:#d7827e
+	--color=border:#dfdad9,header:#286983,gutter:#faf4ed
+	--color=spinner:#ea9d34,info:#56949f
+	--color=pointer:#907aa9,marker:#b4637a,prompt:#797593"
 
-# Enable desktop sharing for Wayland
-export MOZ_ENABLE_WAYLAND=1
-export XDG_SESSION_TYPE=wayland
-export XDG_CURRENT_DESKTOP=sway
 
 # Path to your Oh My Zsh installation
 export ZSH="$HOME/.oh-my-zsh"
@@ -83,7 +86,7 @@ alias gs="git status"
 alias lg="lazygit"
 
 # Package management
-alias update="sudo pacman -Syu"
+alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh && brew upgrade"
 
 # Dotfiles management (bare repository)
 alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
@@ -115,10 +118,4 @@ compinit -u
 # Enable menu selection for completion
 zstyle ':completion:*' menu select
 
-################################################################################
-#                      Start Sway in TTY Mode                                  #
-################################################################################
-# Automatically start Sway if on TTY1 and not already in a Wayland session
-if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-    exec sway
-fi
+

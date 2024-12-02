@@ -1,40 +1,7 @@
 ################################################################################
 #                            Color Scheme Configuration                        #
 ################################################################################
-# Default colors for Alacritty terminal
-[colors.primary]
-# Hard contrast background = '#1d2021'
-background = '#282828'  # Dark background color
-# Soft contrast background = '#32302f'
-foreground = '#ebdbb2'  # Light foreground (text) color
-
-################################################################################
-#                            Normal Colors                                      #
-################################################################################
-# Define the standard (non-bright) colors
-[colors.normal]
-black   = '#282828'  # black
-red     = '#cc241d'  # red
-green   = '#98971a'  # green
-yellow  = '#d79921'  # yellow
-blue    = '#458588'  # blue
-magenta = '#b16286'  # magenta
-cyan    = '#689d6a'  # cyan
-white   = '#a89984'  # white
-
-################################################################################
-#                            Bright Colors                                      #
-################################################################################
-# Define the bright colors for text highlighting, etc.
-[colors.bright]
-black   = '#928374'  # bright black (usually dark gray)
-red     = '#fb4934'  # bright red
-green   = '#b8bb26'  # bright green
-yellow  = '#fabd2f'  # bright yellow
-blue    = '#83a598'  # bright blue
-magenta = '#d3869b'  # bright magenta
-cyan    = '#8ec07c'  # bright cyan
-white   = '#ebdbb2'  # bright white (light gray)
+import = ["~/.config/alacritty/rose-pine.toml"]
 
 ################################################################################
 #                            Font Configuration                                #
@@ -44,7 +11,7 @@ white   = '#ebdbb2'  # bright white (light gray)
 size = 12  # Set font size to 12
 
 [font.normal]
-family = "MesloLGS Nerd Font"  # Font family
+family = "JetBrainsMono NFM"  # Font family
 
 ################################################################################
 #                            Window Configuration                              #
@@ -52,7 +19,6 @@ family = "MesloLGS Nerd Font"  # Font family
 # Window settings
 [window]
 dynamic_padding = true  # Enable dynamic padding
-decorations = "none"    # Disable window decorations
 
 ################################################################################
 #                            Padding Configuration                             #
