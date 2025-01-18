@@ -17,6 +17,10 @@ export VISUAL=nvim
 export EDITOR=nvim
 export TERM=xterm-256color
 
+# Homebrew
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_ENV_HINTS=1
+
 # Set rose-pine-dawn theme for FZF
 export FZF_DEFAULT_OPTS="
 	--color=fg:#797593,bg:#faf4ed,hl:#d7827e
