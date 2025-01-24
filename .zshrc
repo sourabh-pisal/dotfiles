@@ -21,6 +21,9 @@ export TERM=xterm-256color
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 
+# Node.js
+export JSII_SILENCE_WARNING_UNTESTED_NODE_VERSION=1
+
 # Set rose-pine-dawn theme for FZF
 export FZF_DEFAULT_OPTS="
 	--color=fg:#797593,bg:#faf4ed,hl:#d7827e
