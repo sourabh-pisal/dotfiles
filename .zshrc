@@ -6,7 +6,10 @@ if [ -f ~/.env ]; then
   export $(grep -v '^#' ~/.env | xargs)
 fi
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# Load Homebrew environment variables
+if [ -d /home/linuxbrew/.linuxbrew ]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 
 ################################################################################
 #                             Environment Variables                            #
@@ -102,10 +105,6 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HO
 alias ls="ls --color=auto"
 alias la="ls -lathr"
 
-# Radio streaming
-alias lofi="mpv --no-video --quiet '$LOFI'"
-alias wspr="mpv --cache=yes --cache-secs=30 --demuxer-max-bytes=8192k --no-video --quiet --input-ipc-server=wspr '$WSPR'"
-
 ################################################################################
 #                                Sourcing                                     #
 ################################################################################
@@ -125,4 +124,9 @@ compinit -u
 # Enable menu selection for completion
 zstyle ':completion:*' menu select
 
-
+#################################################################################
+#                             Start Sway                                        #
+#################################################################################
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
+    exec sway
+fi
