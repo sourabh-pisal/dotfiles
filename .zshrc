@@ -96,7 +96,20 @@ alias gs="git status"
 alias lg="lazygit"
 
 # Package management
-alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh && brew upgrade"
+if [ -x "$(command -v apt)" ]; then
+    alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
+elif [ -x "$(command -v dnf)" ]; then
+    alias update="sudo dnf upgrade --refresh"
+elif [ -x "$(command -v pacman)" ]; then
+    alias update="sudo pacman -Syu"
+else
+    alias update="echo 'No supported package manager found.'"
+fi
+
+# concatinate update if brew is installed
+if [ -x "$(command -v brew)" ]; then
+  alias update="brew update && brew upgrade && $update"
+fi
 
 # Dotfiles management (bare repository)
 alias dotfiles="/usr/bin/git --git-dir=$HOME/workplace/dotfiles/ --work-tree=$HOME"
