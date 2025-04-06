@@ -99,7 +99,7 @@ alias lg="lazygit"
 alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh && brew upgrade"
 
 # Dotfiles management (bare repository)
-alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/workplace/dotfiles/ --work-tree=$HOME"
 
 # ls enhancements
 alias ls="ls --color=auto"

@@ -9,6 +9,7 @@
     "pulseaudio",
     "cpu",
     "memory",
+    "battery",
     "temperature",
     "clock",
     "tray"
@@ -31,8 +32,12 @@
     "format": "| {}%  ",
     "tooltip": false
   },
+  "battery": {
+    "format": "| {}% 󰁹",
+    "tooltip": false
+  },
   "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
     "critical-threshold": 80,
     "format": "| {temperatureC}°C {icon}",
     "format-icons": [""],

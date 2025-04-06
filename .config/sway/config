@@ -2,7 +2,7 @@
 #                            Main Settings                                      #
 ################################################################################
 # Set font for Sway
-font pango: MesloLGSNerdFont Medium 12
+font pango: JetBrainsMono Medium 12
 
 # Window gaps configuration
 gaps inner 5
@@ -17,7 +17,7 @@ focus_follows_mouse no
 set $mod Mod4
 set $term foot
 set $menu wofi --show drun
-set $wallpaper '/home/sourabh/Pictures/wallpaper.jpg'
+set $wallpaper '/home/sourabh/pictures/wallpaper.jpg'
 
 # Set default border style for windows
 default_border pixel 3
@@ -27,9 +27,6 @@ smart_borders on
 ################################################################################
 #                            Start Applications                                #
 ################################################################################
-# Turn on night mode with wlsunset
-exec wlsunset
-
 # Start notification daemon
 exec swaync
 
