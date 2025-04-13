@@ -6,6 +6,13 @@ if [ -f ~/.env ]; then
   export $(grep -v '^#' ~/.env | xargs)
 fi
 
+# Load custom scripts
+if [ -d "$HOME/.scripts" ]; then
+    for script in "$HOME/.scripts"/*.sh; do
+        [ -r "$script" ] && source "$script"
+    done
+fi
+
 # Load Homebrew environment variables
 if [ -d /home/linuxbrew/.linuxbrew ]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
