@@ -2,7 +2,7 @@
 #                            Main Settings                                      #
 ################################################################################
 # Set font for Sway
-font pango: JetBrainsMono Medium 12
+font pango: MesloLGSNerdFont Medium 13
 
 # Window gaps configuration
 gaps inner 5
@@ -17,7 +17,7 @@ focus_follows_mouse no
 set $mod Mod4
 set $term foot
 set $menu wofi --show drun
-set $wallpaper '/home/sourabh/pictures/wallpaper.jpg'
+set $wallpaper '/usr/share/backgrounds/sway/Sway_Wallpaper_Blue_2048x1536.png'
 
 # Set default border style for windows
 default_border pixel 3
