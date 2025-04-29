@@ -103,23 +103,28 @@ alias gs="git status"
 alias lg="lazygit"
 
 # Package management
-if [ -x "$(command -v apt)" ]; then
-    alias update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
-elif [ -x "$(command -v dnf)" ]; then
-    alias update="sudo dnf upgrade --refresh"
-elif [ -x "$(command -v pacman)" ]; then
-    alias update="sudo pacman -Syu"
+if command -v apt >/dev/null 2>&1; then
+    base_update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
+elif command -v dnf >/dev/null 2>&1; then
+    base_update="sudo dnf upgrade --refresh"
+elif command -v pacman >/dev/null 2>&1; then
+    base_update="sudo pacman -Syu"
 else
-    alias update="echo 'No supported package manager found.'"
+    base_update="echo 'No supported package manager found.'"
 fi
 
-# concatinate update if brew is installed
-if [ -x "$(command -v brew)" ]; then
-  alias update="brew update && brew upgrade && $update"
+# Add brew if available
+if command -v brew >/dev/null 2>&1; then
+    update_cmd="$base_update && brew update && brew upgrade"
+else
+    update_cmd="$base_update"
 fi
+
+# Set the update alias
+alias update="$update_cmd"
 
 # Dotfiles management (bare repository)
-alias dotfiles="/usr/bin/git --git-dir=$HOME/workplace/dotfiles/ --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
 
 # ls enhancements
 alias ls="ls --color=auto"
@@ -143,10 +148,3 @@ compinit -u
 
 # Enable menu selection for completion
 zstyle ':completion:*' menu select
-
-#################################################################################
-#                             Start Sway                                        #
-#################################################################################
-if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
-    exec sway
-fi
