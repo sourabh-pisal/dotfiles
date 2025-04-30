@@ -1,4 +1,23 @@
 ################################################################################
+#                             Completion Configuration                         #
+################################################################################
+# Use a cached .zcompdump file if available
+zcompdump="${ZDOTDIR:-$HOME}/.zcompdump"
+
+# Enable Zsh autocompletion
+autoload -Uz compinit
+
+# Only recompile if the .zcompdump is older than 1 day
+if [[ -n $zcompdump(#qN.m+1) ]]; then
+  compinit -d "$zcompdump"
+else
+  compinit -C -d "$zcompdump"
+fi
+
+# Enable menu selection for completion
+zstyle ':completion:*' menu select
+
+################################################################################
 #                            Export Variables from .env                        #
 ################################################################################
 # Load environment variables from the .env file if it exists
@@ -104,20 +123,20 @@ alias lg="lazygit"
 
 # Package management
 if command -v apt >/dev/null 2>&1; then
-    base_update="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
+    update_cmd="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
 elif command -v dnf >/dev/null 2>&1; then
-    base_update="sudo dnf upgrade --refresh"
+    update_cmd="sudo dnf upgrade --refresh"
 elif command -v pacman >/dev/null 2>&1; then
-    base_update="sudo pacman -Syu"
+    update_cmd="sudo pacman -Syu"
 else
-    base_update="echo 'No supported package manager found.'"
+    update_cmd="echo 'No supported package manager found.'"
 fi
 
 # Add brew if available
 if command -v brew >/dev/null 2>&1; then
-    update_cmd="$base_update && brew update && brew upgrade"
+    update_cmd="$update_cmd && brew update && brew upgrade"
 else
-    update_cmd="$base_update"
+    update_cmd="$update_cmd"
 fi
 
 # Set the update alias
@@ -139,12 +158,3 @@ source $ZSH/oh-my-zsh.sh
 # Source FZF integration
 source <(fzf --zsh)
 
-################################################################################
-#                             Completion Configuration                         #
-################################################################################
-# Enable Zsh autocompletion
-autoload -Uz compinit
-compinit -u
-
-# Enable menu selection for completion
-zstyle ':completion:*' menu select
