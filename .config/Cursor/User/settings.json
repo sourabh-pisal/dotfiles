@@ -10,5 +10,62 @@
         120
     ],
     "editor.formatOnSave": true,
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "keyboard.dispatch": "keyCode",
+    "keybindings": [
+        {
+            "key": "ctrl+k",
+            "command": "workbench.action.navigateUp"
+        },
+        {
+            "key": "ctrl+j",
+            "command": "workbench.action.navigateDown"
+        },
+        {
+            "key": "ctrl+h",
+            "command": "workbench.action.navigateLeft"
+        },
+        {
+            "key": "ctrl+l",
+            "command": "workbench.action.navigateRight"
+        },
+        {
+            "key": "ctrl+d",
+            "command": "editorScroll",
+            "args": {
+                "to": "down",
+                "by": "page",
+                "revealCursor": true
+            }
+        },
+        {
+            "key": "ctrl+u",
+            "command": "editorScroll",
+            "args": {
+                "to": "up",
+                "by": "page",
+                "revealCursor": true
+            }
+        },
+        {
+            "key": "ctrl+e",
+            "command": "editorScroll",
+            "args": {
+                "to": "down",
+                "by": "line",
+                "revealCursor": true,
+                "value": 5
+            }
+        },
+        {
+            "key": "ctrl+y",
+            "command": "editorScroll",
+            "args": {
+                "to": "up",
+                "by": "line",
+                "revealCursor": true,
+                "value": 5
+            }
+        }
+    ]
 }
