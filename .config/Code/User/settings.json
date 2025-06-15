@@ -1,73 +1,203 @@
 {
-    "window.commandCenter": true,
-    "workbench.colorTheme": "Default Light+",
-    "workbench.tree.indent": 16,
-    "editor.tabSize": 2,
-    "editor.insertSpaces": true,
-    "editor.wordWrap": "on",
-    "editor.lineNumbers": "relative",
-    "editor.rulers": [
-        120
-    ],
-    "editor.formatOnSave": true,
-    "files.trimTrailingWhitespace": true,
-    "keyboard.dispatch": "keyCode",
-    "keybindings": [
-        {
-            "key": "ctrl+k",
-            "command": "workbench.action.navigateUp"
-        },
-        {
-            "key": "ctrl+j",
-            "command": "workbench.action.navigateDown"
-        },
-        {
-            "key": "ctrl+h",
-            "command": "workbench.action.navigateLeft"
-        },
-        {
-            "key": "ctrl+l",
-            "command": "workbench.action.navigateRight"
-        },
-        {
-            "key": "ctrl+d",
-            "command": "editorScroll",
-            "args": {
-                "to": "down",
-                "by": "page",
-                "revealCursor": true
-            }
-        },
-        {
-            "key": "ctrl+u",
-            "command": "editorScroll",
-            "args": {
-                "to": "up",
-                "by": "page",
-                "revealCursor": true
-            }
-        },
-        {
-            "key": "ctrl+e",
-            "command": "editorScroll",
-            "args": {
-                "to": "down",
-                "by": "line",
-                "revealCursor": true,
-                "value": 5
-            }
-        },
-        {
-            "key": "ctrl+y",
-            "command": "editorScroll",
-            "args": {
-                "to": "up",
-                "by": "line",
-                "revealCursor": true,
-                "value": 5
-            }
-        }
-    ],
-    "workbench.startupEditor": "none",
-    "window.zoomLevel": 0.75
+  "window.commandCenter": true,
+  "workbench.colorTheme": "Default Light+",
+  "workbench.tree.indent": 16,
+  "workbench.editor.showTabs": "multiple",
+  "search.smartCase": true,
+  "search.useGlobalIgnoreFiles": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.wordWrap": "on",
+  "editor.lineNumbers": "relative",
+  "editor.rulers": [120],
+  "editor.cursorBlinking": "solid",
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "telemetry.telemetryLevel": "off",
+  "telemetry.feedback.enabled": false,
+  "workbench.startupEditor": "none",
+  "window.zoomLevel": 0.75,
+  "window.confirmSaveUntitledWorkspace": false,
+  "vim.leader": " ",
+  "vim.hlsearch": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": false,
+  "vim.handleKeys": {
+    "<C-d>": true,
+    "<C-u>": true,
+    "<C-f>": false,
+    "<C-b>": false
+  },
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<C-d>"],
+      "after": ["<C-d>", "z", "z"]
+    },
+    {
+      "before": ["<C-u>"],
+      "after": ["<C-u>", "z", "z"]
+    },
+    {
+      "before": ["n"],
+      "after": ["n", "z", "z", "z", "v"]
+    },
+    {
+      "before": ["N"],
+      "after": ["N", "z", "z", "z", "v"]
+    },
+    {
+      "before": ["<leader>", "y"],
+      "after": ["\"", "+", "y"]
+    },
+    {
+      "before": ["<leader>", "p"],
+      "after": ["\"", "+", "p"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "after": ["\"", "_", "d"]
+    }
+  ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["J"],
+      "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+      "before": ["K"],
+      "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+      "before": ["<leader>", "y"],
+      "after": ["\"", "+", "y"]
+    },
+    {
+      "before": ["<leader>", "d"],
+      "after": ["\"", "_", "d"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<C-e>"],
+      "after": ["5", "<C-e>"]
+    },
+    {
+      "before": ["<C-y>"],
+      "after": ["5", "<C-y>"]
+    },
+    {
+      "before": ["<C-n>"],
+      "commands": ["workbench.action.toggleSidebarVisibility"]
+    },
+    {
+      "before": ["<leader>", "f", "f"],
+      "commands": ["workbench.action.quickOpen"]
+    },
+    {
+      "before": ["<leader>", "f", "g"],
+      "commands": ["workbench.action.findInFiles"]
+    },
+    {
+      "before": ["<leader>", "g", "f"],
+      "commands": ["editor.action.formatDocument"]
+    },
+    {
+      "before": ["<leader>", "c", "a"],
+      "commands": ["editor.action.quickFix"]
+    },
+    {
+      "before": ["<leader>", "b"],
+      "commands": ["workbench.action.showAllEditors"]
+    },
+    {
+      "before": ["g", "d"],
+      "commands": ["editor.action.revealDefinition"]
+    },
+    {
+      "before": ["g", "i"],
+      "commands": ["editor.action.goToImplementation"]
+    },
+    {
+      "before": ["g", "r"],
+      "commands": ["editor.action.goToReferences"]
+    },
+    {
+      "before": ["r", "n"],
+      "commands": ["editor.action.rename"]
+    },
+    {
+      "before": ["[", "d"],
+      "commands": ["editor.action.marker.next"]
+    },
+    {
+      "before": ["]", "d"],
+      "commands": ["editor.action.marker.prev"]
+    }
+  ],
+  "keyboard.dispatch": "keyCode",
+  "keybindings": [
+    {
+      "key": "ctrl+k",
+      "command": "workbench.action.navigateUp"
+    },
+    {
+      "key": "ctrl+j",
+      "command": "workbench.action.navigateDown"
+    },
+    {
+      "key": "ctrl+h",
+      "command": "workbench.action.navigateLeft"
+    },
+    {
+      "key": "ctrl+l",
+      "command": "workbench.action.navigateRight"
+    },
+    {
+      "key": "ctrl+d",
+      "command": "editorScroll",
+      "args": {
+        "to": "down",
+        "by": "page",
+        "revealCursor": true
+      }
+    },
+    {
+      "key": "ctrl+u",
+      "command": "editorScroll",
+      "args": {
+        "to": "up",
+        "by": "page",
+        "revealCursor": true
+      }
+    },
+    {
+      "key": "ctrl+e",
+      "command": "editorScroll",
+      "args": {
+        "to": "down",
+        "by": "line",
+        "revealCursor": true,
+        "value": 5
+      }
+    },
+    {
+      "key": "ctrl+y",
+      "command": "editorScroll",
+      "args": {
+        "to": "up",
+        "by": "line",
+        "revealCursor": true,
+        "value": 5
+      }
+    }
+  ],
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
