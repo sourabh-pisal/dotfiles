@@ -123,13 +123,17 @@ alias lg="lazygit"
 
 # Package management
 if command -v apt >/dev/null 2>&1; then
-    update_cmd="sudo apt update && sudo apt upgrade -y && sudo snap refresh"
+    update_cmd="sudo apt update && sudo apt upgrade -y"
 elif command -v dnf >/dev/null 2>&1; then
     update_cmd="sudo dnf upgrade --refresh"
 elif command -v pacman >/dev/null 2>&1; then
     update_cmd="sudo pacman -Syu"
 else
     update_cmd="echo 'No supported package manager found.'"
+fi
+
+if command -v snap > /dev/null 2>&1; then
+  update_cmd="$update_cmd && sudo snap refresh"
 fi
 
 # Add brew if available
