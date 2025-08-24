@@ -42,6 +42,9 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities,
       })
+      lspconfig.pylsp.setup({
+        capabilities = capabilities,
+      })
       lspconfig.eslint.setup({
         settings = {
           lintOnSave = true,
