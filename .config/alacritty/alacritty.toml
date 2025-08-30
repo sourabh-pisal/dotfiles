@@ -26,4 +26,4 @@ padding = { x = 10, y = 5 }
 ################################################################################
 #                            Color Scheme Configuration                        #
 ################################################################################
-import = ["~/.config/alacritty/rose-pine.toml"]
+import = ["~/.config/alacritty/tokyonight-moon.toml"]
