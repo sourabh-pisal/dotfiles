@@ -140,8 +140,8 @@ alias lg="lazygit"
 # Package management
 update() {
     if command -v pacman &>/dev/null; then
-        sudo pacman -Syu
         pacman -Qqe > "$HOME/pkglist-pacman.txt"
+        sudo pacman -Syu
     fi
 
     if command -v apt &>/dev/null; then
