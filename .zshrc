@@ -138,29 +138,34 @@ alias gs="git status"
 alias lg="lazygit"
 
 # Package management
-if command -v apt >/dev/null 2>&1; then
-    update_cmd="sudo apt update && sudo apt upgrade -y"
-elif command -v dnf >/dev/null 2>&1; then
-    update_cmd="sudo dnf upgrade --refresh"
-elif command -v pacman >/dev/null 2>&1; then
-    update_cmd="sudo pacman -Syu"
-else
-    update_cmd="echo 'No supported package manager found.'"
-fi
+update() {
+    if command -v pacman &>/dev/null; then
+        sudo pacman -Syu
+        pacman -Qqe > "$HOME/pkglist-pacman.txt"
+    fi
 
-if command -v snap > /dev/null 2>&1; then
-  update_cmd="$update_cmd && sudo snap refresh"
-fi
+    if command -v apt &>/dev/null; then
+        sudo apt update && sudo apt upgrade -y
+        apt list --installed 2>/dev/null | awk -F/ '{print $1}' > "$HOME/pkglist-apt.txt"
+    fi
 
-# Add brew if available
-if command -v brew >/dev/null 2>&1; then
-    update_cmd="$update_cmd && brew update && brew upgrade"
-else
-    update_cmd="$update_cmd"
-fi
+    if command -v dnf &>/dev/null; then
+        sudo dnf upgrade --refresh
+        dnf list installed -q | awk '{print $1}' > "$HOME/pkglist-dnf.txt"
+    fi
 
-# Set the update alias
-alias update="$update_cmd"
+    if command -v snap &>/dev/null; then
+        sudo snap refresh
+        snap list | tail -n +2 | awk '{print $1}' > "$HOME/pkglist-snap.txt"
+    fi
+
+    if command -v brew &>/dev/null; then
+        brew update && brew upgrade
+        brew list --formula > "$HOME/pkglist-brew.txt"
+        brew list --cask > "$HOME/pkglist-brew-cask.txt"
+    fi
+}
+
 
 # Dotfiles management (bare repository)
 alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
