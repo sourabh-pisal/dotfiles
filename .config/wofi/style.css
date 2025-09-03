@@ -1,13 +1,13 @@
-@define-color darkbase #1d2021;
-@define-color base #282828;
-@define-color foreground #ebdbb2;
-@define-color cyan #83a598;
-@define-color green #8ec07c;
-@define-color orange #fe8019;
-@define-color pink #d3869b;
-@define-color purple #d3869b;
-@define-color red #fb4934;
-@define-color yellow #fabd2f;
+@define-color darkbase #1e2030;
+@define-color base #222436;
+@define-color foreground #c8d3f5;
+@define-color cyan #86e1fc;
+@define-color green #c3e88d;
+@define-color orange #ff966c;
+@define-color pink #fca7ea;
+@define-color purple #c099ff;
+@define-color red #ff757f;
+@define-color yellow #ffc777;
 
 window {
   margin: 0px;

@@ -15,7 +15,7 @@ focus_follows_mouse no
 ################################################################################
 # Set environment variables for Sway
 set $mod Mod4
-set $term foot
+set $term alacritty 
 set $menu wofi --show drun
 set $wallpaper '~/.config/sway/wallpaper.png'
 
