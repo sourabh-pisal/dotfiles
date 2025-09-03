@@ -175,7 +175,7 @@ alias ls="ls --color=auto"
 alias la="ls -lathr"
 
 ################################################################################
-#                                Sourcing                                     #
+#                                Sourcing                                      #
 ################################################################################
 # Source Oh My Zsh
 source $ZSH/oh-my-zsh.sh
@@ -183,3 +183,10 @@ source $ZSH/oh-my-zsh.sh
 # Source FZF integration
 source <(fzf --zsh)
 
+
+################################################################################
+#                                Start Sway                                    #
+################################################################################
+if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
+    exec sway
+fi

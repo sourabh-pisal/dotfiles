@@ -45,12 +45,12 @@ exec swayidle -w \
 #                            Border Colors                                     #
 ################################################################################
 # Set colors for various client states
-client.focused          #ebdbb2 #ebdbb2 #1d2021 #fe8019  
-client.unfocused        #282828 #282828 #83a598 #1d2021  
-client.focused_inactive #282828 #282828 #282828 
-client.placeholder      #fabd2f #fabd2f #1d2021
-client.urgent           #d3869b #d3869b #1d2021  
-client.background       #282828
+client.focused          #c0caf5 #c0caf5 #1a1b26 #7aa2f7
+client.unfocused        #16161e #16161e #7aa2f7 #1a1b26
+client.focused_inactive #16161e #16161e #16161e
+client.placeholder      #e0af68 #e0af68 #1a1b26
+client.urgent           #f7768e #f7768e #1a1b26
+client.background       #1a1b26
 
 ################################################################################
 #                            Key Bindings                                      #
