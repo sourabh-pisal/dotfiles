@@ -2,7 +2,7 @@
 @define-color background #1a1b26;
 
 * {
-  font-family: MesloLGSNerdFont;
+  font-family: JetBrainsMono NF;
   font-size: 16px;
 }
 
@@ -27,7 +27,7 @@ button:hover {
   color: @foreground;
 }
 
-#workspaces button.active {
+#workspaces button.focused {
   background: inherit;
   box-shadow: inset 0 -1px @foreground;
 }

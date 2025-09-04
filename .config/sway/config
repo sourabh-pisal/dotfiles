@@ -2,7 +2,7 @@
 #                            Main Settings                                      #
 ################################################################################
 # Set font for Sway
-font pango: MesloLGSNerdFont Medium 13
+font pango: JetBrainsMono NF Medium 13
 
 # Window gaps configuration
 gaps inner 5
