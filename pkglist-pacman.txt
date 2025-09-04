@@ -9,7 +9,6 @@ firefox
 fzf
 gcc
 git
-htop
 lazygit
 less
 linux
@@ -27,6 +26,7 @@ pipewire-pulse
 power-profiles-daemon
 python-gobject
 ripgrep
+steam-native-runtime
 sudo
 sway
 swaybg
