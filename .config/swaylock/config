@@ -1,30 +1,49 @@
-font="Source Code Pro"
-color=000000
-bs-hl-color=fe8019
-caps-lock-bs-hl-color=cc241d
-caps-lock-key-hl-color=cc241d
-inside-color=282828
-inside-clear-color=282828
-inside-caps-lock-color=282828
-inside-ver-color=282828
-inside-wrong-color=282828
-key-hl-color=fe8019
+font="JetBrainsMono NF Medium"
+
+# Background
+color=1a1b26
+
+# Key / highlight colors
+bs-hl-color=ff9e64
+caps-lock-bs-hl-color=f7768e
+caps-lock-key-hl-color=f7768e
+
+# Inside circle colors
+inside-color=1a1b26
+inside-clear-color=1a1b26
+inside-caps-lock-color=1a1b26
+inside-ver-color=1a1b26
+inside-wrong-color=1a1b26
+
+# Key highlight
+key-hl-color=7aa2f7
+
+# Layout text
 layout-bg-color=00000000
 layout-border-color=00000000
-layout-text-color=ebdbb2
+layout-text-color=c0caf5
+
+# Line (hidden by transparency)
 line-color=00000000
 line-clear-color=00000000
 line-caps-lock-color=00000000
 line-ver-color=00000000
 line-wrong-color=00000000
-ring-color=ebdbb2
-ring-clear-color=8ec07c
-ring-caps-lock-color=fb4934
-ring-ver-color=8ec07c
-ring-wrong-color=cc241d
+
+# Ring colors
+ring-color=c0caf5
+ring-clear-color=9ece6a
+ring-caps-lock-color=f7768e
+ring-ver-color=7dcfff
+ring-wrong-color=f7768e
+
+# Separator (invisible)
 separator-color=00000000
-text-color=ebdbb2
-text-clear-color=ebdbb2
-text-caps-lock-color=fb4934
-text-ver-color=8ec07c
-text-wrong-color=cc241d
+
+# Text colors
+text-color=c0caf5
+text-clear-color=9ece6a
+text-caps-lock-color=f7768e
+text-ver-color=7dcfff
+text-wrong-color=f7768e
+
