@@ -18,6 +18,7 @@ neovim
 networkmanager
 nodejs
 npm
+nss-mdns
 openssh
 pipewire
 pipewire-alsa
