@@ -11,6 +11,7 @@ gcc
 git
 lazygit
 less
+libnotify
 linux
 linux-firmware
 lvm2
@@ -27,7 +28,6 @@ pipewire-pulse
 power-profiles-daemon
 python-gobject
 ripgrep
-steam-native-runtime
 sudo
 sway
 swaybg
