@@ -3,12 +3,12 @@ amd-ucode
 base
 base-devel
 brightnessctl
-btop
 dolphin
 firefox
 fzf
 gcc
 git
+htop
 lazygit
 less
 libnotify
