@@ -35,10 +35,10 @@ exec waybar
 
 # Configure swayidle to handle idle and sleep behaviors
 exec swayidle -w \
-    timeout 300 'swaylock -f -c 000000 -i $wallpaper' \
-    timeout 600 'swaymsg "output * power off"' \
+    timeout 900 'swaylock -f -c 000000 -i $wallpaper' \
+    timeout 1200 'swaymsg "output * power off"' \
     resume 'swaymsg "output * power on"' \
-    timeout 900 'systemctl suspend' \
+    timeout 1800 'systemctl suspend' \
     before-sleep 'swaylock -f -c 000000 -i $wallpaper'
 
 ################################################################################
