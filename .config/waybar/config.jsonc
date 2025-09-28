@@ -1,6 +1,8 @@
 {
   "height": 24,
-  "modules-left": ["sway/workspaces"],
+  "modules-left": [
+    "sway/workspaces"
+  ],
   "sway/workspaces": {
     "window-rewrite": {},
   },
@@ -13,6 +15,7 @@
     "custom/cpu_temp",
     "clock",
     "tray",
+    "network",
   ],
   "pulseaudio": {
     "format": "| {volume}% {icon} {format_source}",
@@ -20,7 +23,11 @@
     "format-source": "{volume}% ",
     "format-source-muted": " ",
     "format-icons": {
-      "default": [" ", " ", " "],
+      "default": [
+        " ",
+        " ",
+        " "
+      ],
     },
     "tooltip": false,
   },
@@ -46,5 +53,10 @@
     "format": "| {:%I:%M %p} ",
     "format-alt": "| {:%A, %b %d} ",
     "tooltip": false,
+  },
+  "network": {
+    "format": "",
+    "format-disconnected": "|  No Network",
+    "tooltip-format": "",
   },
 }
