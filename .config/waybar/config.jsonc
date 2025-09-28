@@ -1,8 +1,8 @@
 {
   "height": 24,
-  "modules-left": [ "sway/workspaces" ],
+  "modules-left": ["sway/workspaces"],
   "sway/workspaces": {
-    "window-rewrite": {}
+    "window-rewrite": {},
   },
   "spacing": 15,
   "modules-right": [
@@ -10,9 +10,9 @@
     "cpu",
     "memory",
     "battery",
-    "temperature",
+    "custom/cpu_temp",
     "clock",
-    "tray"
+    "tray",
   ],
   "pulseaudio": {
     "format": "| {volume}% {icon} {format_source}",
@@ -20,38 +20,31 @@
     "format-source": "{volume}% ",
     "format-source-muted": " ",
     "format-icons": {
-      "default": [
-        " ",
-        " ",
-        " "
-      ]
+      "default": [" ", " ", " "],
     },
-    "tooltip": false
+    "tooltip": false,
   },
   "cpu": {
     "format": "| {usage}%  ",
-    "tooltip": false
+    "tooltip": false,
   },
   "memory": {
     "format": "| {}%  ",
-    "tooltip": false
+    "tooltip": false,
   },
   "battery": {
     "format": "| {}% 󰁹",
-    "tooltip": false
+    "tooltip": false,
   },
-  "temperature": {
-    "hwmon-path": "/sys/class/hwmon/hwmon5/temp1_input",
-    "critical-threshold": 80,
-    "format": "| {temperatureC}°C {icon}",
-    "format-icons": [
-      ""
-    ],
-    "tooltip": false
+  "custom/cpu_temp": {
+    "exec": "~/.config/waybar/cpu_temp.sh",
+    "interval": 10,
+    "format": "| {} ",
+    "tooltip": false,
   },
   "clock": {
     "format": "| {:%I:%M %p} ",
     "format-alt": "| {:%A, %b %d} ",
-    "tooltip": false
-  }
+    "tooltip": false,
+  },
 }
