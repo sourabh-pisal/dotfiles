@@ -1,7 +1,6 @@
 alacritty
 amd-ucode
 base
-base-devel
 brightnessctl
 dolphin
 firefox
@@ -19,14 +18,12 @@ neovim
 networkmanager
 nodejs
 npm
-nss-mdns
 openssh
 pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-pulse
 power-profiles-daemon
-python-gobject
 ripgrep
 sudo
 sway
