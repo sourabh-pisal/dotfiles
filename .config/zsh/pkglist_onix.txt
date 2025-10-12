@@ -35,6 +35,7 @@ swaync
 tailscale
 tmux
 ttf-jetbrains-mono-nerd
+unzip
 vim
 waybar
 which
