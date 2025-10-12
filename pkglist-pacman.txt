@@ -17,6 +17,7 @@ lvm2
 neovim
 networkmanager
 nodejs
+noto-fonts
 npm
 openssh
 pipewire
@@ -34,7 +35,6 @@ swaync
 tailscale
 tmux
 ttf-jetbrains-mono-nerd
-ttf-opensans
 vim
 waybar
 which
