@@ -24,7 +24,6 @@ pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-pulse
-power-profiles-daemon
 ripgrep
 speech-dispatcher
 sudo
