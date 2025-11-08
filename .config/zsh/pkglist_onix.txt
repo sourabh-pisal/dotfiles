@@ -20,10 +20,12 @@ nodejs
 noto-fonts
 npm
 openssh
+pass
 pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-pulse
+protonmail-bridge
 ripgrep
 speech-dispatcher
 sudo
@@ -33,6 +35,7 @@ swayidle
 swaylock
 swaync
 tailscale
+thunderbird
 tmux
 ttf-jetbrains-mono-nerd
 unzip
