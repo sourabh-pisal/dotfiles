@@ -14,6 +14,7 @@ libnotify
 linux
 linux-firmware
 lvm2
+mpv
 neovim
 networkmanager
 nodejs
@@ -28,8 +29,6 @@ pipewire-pulse
 power-profiles-daemon
 protonmail-bridge
 python-gobject
-python-pip
-python-poetry
 ripgrep
 speech-dispatcher
 sudo
@@ -50,4 +49,5 @@ wireplumber
 wofi
 xdg-desktop-portal
 xdg-desktop-portal-wlr
+yt-dlp
 zsh
