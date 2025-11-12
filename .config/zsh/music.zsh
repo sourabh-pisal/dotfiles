@@ -1,47 +1,76 @@
-# play youtube in background
-yt-bg() {
-  local yt_bg_dir="$HOME/.local/share/yt-bg"
-  [[ ! -d "$yt_bg_dir" ]] && mkdir -p "$yt_bg_dir"
+# Add background music
+bm-add() {
+  local bm_dir="$HOME/.local/share/bm"
+  local links_file="$bm_dir/links.txt"
 
-  local last_link_file="$yt_bg_dir/last_link.txt"
+  [[ ! -d "$bm_dir" ]] && mkdir -p "$bm_dir"
 
-  # If a link is provided, use it and save as last played
-  if [[ -n "$1" ]]; then
-    local ytlink="$1"
-    echo "$ytlink" > "$last_link_file"
-  else
-    # If no link is provided, try to read the last played link
-    if [[ -f "$last_link_file" ]]; then
-      local ytlink
-      ytlink=$(<"$last_link_file")
-    else
-      echo "Usage: yt-bg <youtube-link>"
-      return 1
-    fi
+  # Add update a channel mapping 
+  if [[ -z "$1" || -z "$2" ]]; then
+    echo "Usage: bm-add <channel-name> <channel-link>"
+    return 1
   fi
 
+  local channel="$1"
+  local link="$2"
+
+  # Remove old entry if it exists
+  grep -v "^${channel}|" "$links_file" 2>/dev/null > "${links_file}.tmp" || true
+  echo "${channel}|${link}" >> "${links_file}.tmp"
+  mv "${links_file}.tmp" "$links_file"
+
+  echo "Saved: $channel"
+  return 0
+}
+
+# Play background music
+bm-play() {
+  local bm_dir="$HOME/.local/share/bm"
+  local links_file="$bm_dir/links.txt"
+
+  # --- Play mode (no args) ---
+  if [[ ! -f "$links_file" || ! -s "$links_file" ]]; then
+    echo "No saved channels yet. Add one using:"
+    echo "bm-add <channel-name> <channel-link>"
+    return 1
+  fi
+
+  # Use fzf to select channel
+  local selection
+  selection=$(awk -F'|' '{print $1}' "$links_file" | fzf --prompt="Select channel:" --height=10 --border --ansi)
+
+  [[ -z "$selection" ]] && {
+    return 1
+  }
+
+  local link
+  link=$(grep "^${selection}|" "$links_file" | head -n1 | cut -d'|' -f2-)
+
+  echo "Playing $selection"
   nohup mpv \
     --no-video \
     --really-quiet \
-    "$ytlink" >/dev/null 2>&1 &
+    "$link" >/dev/null 2>&1 &
 
   local pid=$!
-  echo "$pid" > "$yt_bg_dir/last_pid"
+  echo "$pid" > "$bm_dir/last_pid"
 
   disown 
 }
 
-yt-bg-stop() {
-  local pid_file="$HOME/.local/share/yt-bg/last_pid"
+# Stop background music
+bm-stop() {
+  local pid_file="$HOME/.local/share/bm/last_pid"
   if [[ -f "$pid_file" ]]; then
     local pid
     pid=$(cat "$pid_file")
     if kill "$pid" 2>/dev/null; then
       rm -f "$pid_file"
     else
-      echo "No yt-bg process found."
+      echo "No bm-play process found."
     fi
   else
-    echo "No yt-bg process found."
+    echo "No bm-play process found."
   fi
 }
+
