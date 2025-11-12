@@ -21,6 +21,11 @@ for file in $ZSH_CONFIG/custom/*.zsh; do
   [ -r "$file" ] && source "$file"
 done
 
+# Load function/alias for music
+for file in $ZSH_CONFIG/music.zsh; do
+  [ -r "$file" ] && source "$file"
+done
+
 # Start sway
 if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
     exec sway

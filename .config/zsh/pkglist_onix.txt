@@ -14,6 +14,7 @@ libnotify
 linux
 linux-firmware
 lvm2
+mpv
 neovim
 networkmanager
 nodejs
@@ -46,4 +47,5 @@ wireplumber
 wofi
 xdg-desktop-portal
 xdg-desktop-portal-wlr
+yt-dlp
 zsh
