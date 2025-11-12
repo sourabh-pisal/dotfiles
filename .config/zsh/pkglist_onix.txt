@@ -26,7 +26,9 @@ pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-pulse
+power-profiles-daemon
 protonmail-bridge
+python-gobject
 ripgrep
 speech-dispatcher
 sudo
