@@ -53,6 +53,14 @@ client.urgent           #f7768e #f7768e #1a1b26
 client.background       #1a1b26
 
 ################################################################################
+#                            Output display Control                            #
+################################################################################
+# turn off monitor if lid is closed
+bindswitch --reload --locked lid:on  exec "swaymsg output eDP-1 disable"
+bindswitch --reload --locked lid:off exec "swaymsg output eDP-1 enable"
+
+
+################################################################################
 #                            Key Bindings                                      #
 ################################################################################
 
