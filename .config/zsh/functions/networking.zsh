@@ -7,7 +7,7 @@ connect-wifi() {
     if [[ -n "$pass" ]]; then
       nmcli device wifi connect "$ssid" password "$pass"
     else
-      nmcli device wifi connect "$ssid"
+      nmcli device wifi connect "$ssid" --ask
     fi
   else
     echo "Usage: connect-wifi <SSID> [password]"
