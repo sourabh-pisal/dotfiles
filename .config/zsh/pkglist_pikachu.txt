@@ -1,6 +1,7 @@
 alacritty
 amd-ucode
 base
+bitwarden
 brightnessctl
 dolphin
 firefox
