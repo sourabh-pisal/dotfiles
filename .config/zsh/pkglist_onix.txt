@@ -3,6 +3,7 @@ amd-ucode
 base
 bitwarden
 brightnessctl
+davfs2
 dolphin
 firefox
 fzf
@@ -21,6 +22,7 @@ networkmanager
 nodejs
 noto-fonts
 npm
+obsidian
 openssh
 pass
 pipewire
