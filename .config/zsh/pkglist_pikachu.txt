@@ -3,6 +3,7 @@ amd-ucode
 base
 bitwarden
 brightnessctl
+davfs2
 dolphin
 firefox
 fzf
@@ -50,5 +51,6 @@ wireplumber
 wofi
 xdg-desktop-portal
 xdg-desktop-portal-wlr
+yazi
 yt-dlp
 zsh
