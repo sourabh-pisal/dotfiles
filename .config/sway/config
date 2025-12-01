@@ -70,6 +70,9 @@ set $down j
 set $up k
 set $right l
 
+# Toggle wlsunset
+bindsym $mod+shift+s exec ~/.config/sway/wlsunset-toggle
+
 # Brightness control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
