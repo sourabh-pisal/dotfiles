@@ -1,5 +1,5 @@
 # Connect to Wi-Fi by SSID (with optional password)
-connect-wifi() {
+wifi-connect() {
   if [[ -n "$1" ]]; then
     local ssid="$1"
     local pass="$2"
@@ -10,12 +10,12 @@ connect-wifi() {
       nmcli device wifi connect "$ssid" --ask
     fi
   else
-    echo "Usage: connect-wifi <SSID> [password]"
+    echo "Usage: wifi-connect <SSID> [password]"
   fi
 }
 
 # Disconnect from current Wi-Fi
-disconnect-wifi() {
+wifi-disconnect() {
   local iface
   iface=$(nmcli -t -f DEVICE,TYPE d | awk -F: '$2=="wifi"{print $1; exit}')
   if [[ -n "$iface" ]]; then
@@ -27,7 +27,7 @@ disconnect-wifi() {
 }
 
 # List available Wi-Fi networks
-list-wifi() {
+wifi-list() {
   echo "Scanning for available Wi-Fi networks..."
   nmcli device wifi list
 }
