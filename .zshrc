@@ -31,6 +31,11 @@ for file in $ZSH_CONFIG/owncloud.zsh; do
   [ -r "$file" ] && source "$file"
 done
 
+# Load function/alias for managing tailscale 
+for file in $ZSH_CONFIG/tailscale.zsh; do
+  [ -r "$file" ] && source "$file"
+done
+
 # Start sway
 if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then
     exec sway
