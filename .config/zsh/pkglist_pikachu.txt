@@ -22,6 +22,7 @@ networkmanager
 nodejs
 noto-fonts
 npm
+okular
 openssh
 pass
 pipewire
@@ -48,6 +49,7 @@ vim
 waybar
 which
 wireplumber
+wlsunset
 wofi
 xdg-desktop-portal
 xdg-desktop-portal-wlr
