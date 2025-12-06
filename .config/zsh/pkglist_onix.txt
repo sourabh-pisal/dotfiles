@@ -4,6 +4,8 @@ base
 bitwarden
 brightnessctl
 davfs2
+docker
+docker-compose
 dolphin
 firefox
 fzf
