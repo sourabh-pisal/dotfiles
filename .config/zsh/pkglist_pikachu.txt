@@ -18,6 +18,7 @@ libnotify
 linux
 linux-firmware
 lvm2
+mandoc
 mpv
 neovim
 networkmanager
