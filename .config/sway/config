@@ -59,6 +59,10 @@ client.background       #1a1b26
 bindswitch --reload --locked lid:on  exec "swaymsg output eDP-1 disable"
 bindswitch --reload --locked lid:off exec "swaymsg output eDP-1 enable"
 
+# temp scale monitor
+output DP-2 {
+    scale 1.2
+}
 
 ################################################################################
 #                            Key Bindings                                      #
