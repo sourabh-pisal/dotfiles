@@ -7,6 +7,7 @@ davfs2
 docker
 docker-compose
 dolphin
+eslint-language-server
 firefox
 fzf
 gcc
@@ -17,6 +18,7 @@ less
 libnotify
 linux
 linux-firmware
+lua-language-server
 lvm2
 mandoc
 mpv
@@ -33,6 +35,7 @@ pipewire-alsa
 pipewire-audio
 pipewire-pulse
 power-profiles-daemon
+prettier
 protonmail-bridge
 python-gobject
 ripgrep
@@ -47,6 +50,7 @@ tailscale
 thunderbird
 tmux
 ttf-jetbrains-mono-nerd
+typescript-language-server
 unzip
 vim
 waybar
