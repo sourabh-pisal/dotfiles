@@ -11,6 +11,10 @@ alias lg="lazygit"
 # Dotfiles management (bare repository)
 alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
 
+# yazi
+alias yz="yazi"
+
 # ls enhancements
 alias ls="ls --color=auto"
 alias la="ls -lathr"
+
