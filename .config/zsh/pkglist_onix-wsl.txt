@@ -1,10 +1,12 @@
 base
+eslint-language-server
 fzf
 gcc
 git
 htop
 lazygit
 less
+lua-language-server
 neovim
 nodejs
 npm
@@ -13,6 +15,7 @@ pass
 ripgrep
 sudo
 tmux
+typescript-language-server
 unzip
 vim
 which
