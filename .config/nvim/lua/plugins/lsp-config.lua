@@ -31,10 +31,7 @@ return {
     "neovim/nvim-lspconfig",
     lazy = false,
     config = function()
-      vim.lsp.config("lua_ls", {})
       vim.lsp.enable("lua_ls")
-
-      vim.lsp.config("ts_ls", {})
       vim.lsp.enable("ts_ls")
 
       vim.lsp.config("eslint", {
