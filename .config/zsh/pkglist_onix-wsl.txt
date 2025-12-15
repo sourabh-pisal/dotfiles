@@ -13,6 +13,8 @@ npm
 openssh
 pass
 ripgrep
+rust
+rust-analyzer
 sudo
 tmux
 typescript-language-server
