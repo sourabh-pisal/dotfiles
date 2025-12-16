@@ -39,6 +39,8 @@ prettier
 protonmail-bridge
 python-gobject
 ripgrep
+rust
+rust-analyzer
 speech-dispatcher
 sudo
 sway
