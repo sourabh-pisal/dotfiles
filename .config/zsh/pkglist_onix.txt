@@ -51,6 +51,7 @@ swaync
 tailscale
 thunderbird
 tmux
+ttf-crimson
 ttf-jetbrains-mono-nerd
 typescript-language-server
 unzip
@@ -64,4 +65,5 @@ xdg-desktop-portal
 xdg-desktop-portal-wlr
 yazi
 yt-dlp
+zettlr
 zsh
