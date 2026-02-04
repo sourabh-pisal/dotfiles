@@ -1,4 +1,4 @@
-configure-owncloud() {
+owncloud-configure() {
     username=$(whoami)
     local url="$1"
     local mountpoint="$2"

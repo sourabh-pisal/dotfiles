@@ -9,6 +9,7 @@ docker-compose
 dolphin
 eslint-language-server
 firefox
+fwupd
 fzf
 gcc
 git
