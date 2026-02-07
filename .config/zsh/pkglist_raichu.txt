@@ -1,7 +1,6 @@
 alacritty
 amd-ucode
 base
-bitwarden
 brightnessctl
 davfs2
 docker
@@ -28,6 +27,7 @@ networkmanager
 nodejs
 noto-fonts
 npm
+nvtop
 okular
 openssh
 pass
