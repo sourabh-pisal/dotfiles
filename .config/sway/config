@@ -53,13 +53,6 @@ client.urgent           #f7768e #f7768e #1a1b26
 client.background       #1a1b26
 
 ################################################################################
-#                            Output display Control                            #
-################################################################################
-# turn off monitor if lid is closed
-bindswitch --reload --locked lid:on  exec "swaymsg output eDP-1 disable"
-bindswitch --reload --locked lid:off exec "swaymsg output eDP-1 enable"
-
-################################################################################
 #                            Key Bindings                                      #
 ################################################################################
 
@@ -191,10 +184,17 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 ################################################################################
-#                            Output Configuration                             #
+#                            Output display Control                            #
 ################################################################################
 # Set background image for outputs
 output * bg $wallpaper fill
+
+# Set display scale for framework 16
+output "BOE NE160QDM-NZ6 Unknown" scale 1.5
+
+# turn off monitor if lid is closed
+bindswitch --reload --locked lid:on  exec "swaymsg output eDP-1 disable"
+bindswitch --reload --locked lid:off exec "swaymsg output eDP-1 enable"
 
 ################################################################################
 #                            Input Configuration                              #
