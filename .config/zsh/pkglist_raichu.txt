@@ -27,7 +27,6 @@ networkmanager
 nodejs
 noto-fonts
 npm
-nvtop
 okular
 openssh
 pass
