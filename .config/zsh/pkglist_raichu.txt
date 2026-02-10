@@ -1,6 +1,7 @@
 alacritty
 amd-ucode
 base
+bind
 brightnessctl
 davfs2
 docker
