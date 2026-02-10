@@ -192,6 +192,10 @@ output * bg $wallpaper fill
 # Set display scale for framework 16
 output "BOE NE160QDM-NZ6 Unknown" scale 1.5
 
+# Set color profile for framework 16
+output "BOE NE160QDM-NZ6 Unknown" color_profile icc ~/.config/sway/BOE_CQ_______NE160QDM_NZ6.icc
+
+
 # turn off monitor if lid is closed
 bindswitch --reload --locked lid:on  exec "swaymsg output eDP-1 disable"
 bindswitch --reload --locked lid:off exec "swaymsg output eDP-1 enable"
