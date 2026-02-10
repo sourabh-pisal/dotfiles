@@ -29,5 +29,6 @@ wifi-disconnect() {
 # List available Wi-Fi networks
 wifi-list() {
   echo "Scanning for available Wi-Fi networks..."
+  nmcli device wifi rescan
   nmcli device wifi list
 }
