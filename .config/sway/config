@@ -189,11 +189,13 @@ bindsym $mod+r mode "resize"
 # Set background image for outputs
 output * bg $wallpaper fill
 
-# Set display scale for framework 16
-output "BOE NE160QDM-NZ6 Unknown" scale 1.5
+# Framework laptop 13 set display scale and color profile
+output "BOE NE135A1M-NY1 Unknown" scale 2
+output "BOE NE161QDM-NZ6 Unknown" color_profile icc ~/.config/sway/BOE_NE135A1M_NY1.icc
 
-# Set color profile for framework 16
-output "BOE NE160QDM-NZ6 Unknown" color_profile icc ~/.config/sway/BOE_CQ_______NE160QDM_NZ6.icc
+# Framework laptop 16 set display scale and color profile
+output "BOE NE160QDM-NZ6 Unknown" scale 1.5
+output "BOE NE160QDM-NZ6 Unknown" color_profile icc ~/.config/sway/BOE_NE160QDM_NZ6.icc
 
 
 # turn off monitor if lid is closed
