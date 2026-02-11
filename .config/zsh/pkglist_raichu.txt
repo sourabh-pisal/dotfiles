@@ -55,6 +55,8 @@ ttf-jetbrains-mono-nerd
 typescript-language-server
 unzip
 vim
+vulkan-radeon
+vulkan-tools
 waybar
 which
 wireplumber
