@@ -191,7 +191,7 @@ output * bg $wallpaper fill
 
 # Framework laptop 13 set display scale and color profile
 output "BOE NE135A1M-NY1 Unknown" scale 2
-output "BOE NE161QDM-NZ6 Unknown" color_profile icc ~/.config/sway/BOE_NE135A1M_NY1.icc
+output "BOE NE135A1M-NY1 Unknown" color_profile icc ~/.config/sway/BOE_NE135A1M_NY1.icc
 
 # Framework laptop 16 set display scale and color profile
 output "BOE NE160QDM-NZ6 Unknown" scale 1.5
