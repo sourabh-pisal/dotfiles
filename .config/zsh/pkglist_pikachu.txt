@@ -26,6 +26,7 @@ mpv
 neovim
 networkmanager
 nodejs
+noto-fonts
 npm
 openssh
 pipewire
