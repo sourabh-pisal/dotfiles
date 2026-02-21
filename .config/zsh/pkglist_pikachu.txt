@@ -26,18 +26,14 @@ mpv
 neovim
 networkmanager
 nodejs
-noto-fonts
 npm
-okular
 openssh
-pass
 pipewire
 pipewire-alsa
 pipewire-audio
 pipewire-pulse
 power-profiles-daemon
 prettier
-protonmail-bridge
 python-gobject
 ripgrep
 speech-dispatcher
@@ -48,9 +44,7 @@ swayidle
 swaylock
 swaync
 tailscale
-thunderbird
 tmux
-ttf-crimson
 ttf-jetbrains-mono-nerd
 typescript-language-server
 unzip
@@ -66,5 +60,4 @@ xdg-desktop-portal
 xdg-desktop-portal-wlr
 yazi
 yt-dlp
-zettlr
 zsh
