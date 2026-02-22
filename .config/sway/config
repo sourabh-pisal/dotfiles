@@ -193,11 +193,6 @@ output * bg $wallpaper fill
 output "BOE NE135A1M-NY1 Unknown" scale 2
 output "BOE NE135A1M-NY1 Unknown" color_profile icc ~/.config/sway/BOE_NE135A1M_NY1.icc
 
-# Framework laptop 16 set display scale and color profile
-output "BOE NE160QDM-NZ6 Unknown" scale 1.5
-output "BOE NE160QDM-NZ6 Unknown" color_profile icc ~/.config/sway/BOE_NE160QDM_NZ6.icc
-
-
 # turn off monitor if lid is closed
 bindswitch --reload --locked lid:on  exec "swaymsg output eDP-1 disable"
 bindswitch --reload --locked lid:off exec "swaymsg output eDP-1 enable"
