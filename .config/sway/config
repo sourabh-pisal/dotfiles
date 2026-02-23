@@ -7,8 +7,8 @@ font pango: JetBrainsMono NF Medium 13
 # Window gaps configuration
 gaps inner 5
 gaps outer 0
-smart_gaps off
-focus_follows_mouse no
+smart_gaps on
+focus_follows_mouse yes
 
 ################################################################################
 #                            Environment Variables                             #
@@ -202,11 +202,13 @@ bindswitch --reload --locked lid:off exec "swaymsg output eDP-1 enable"
 ################################################################################
 # Touchpad configuration
 input "type:touchpad" {
-    tap enabled         # enables click-on-tap
-    tap_button_map lrm  # tap with 1 finger = left click, 2 fingers = right click, 3 fingers = middle click
-    dwt enabled         # disable (touchpad) while typing
-    dwtp enabled        # disable (touchpad) while track pointing
-    natural_scroll enable
+    tap enabled           # enables click-on-tap
+    drag_lock disabled    # disables drag lock
+    tap_button_map lrm    # tap with 1 finger = left click, 2 fingers = right click, 3 fingers = middle click
+    dwt enabled           # disable (touchpad) while typing
+    dwtp enabled          # disable (touchpad) while track pointing
+    scroll_factor 0.5     # sets scroll factor
+    natural_scroll enable # enable natural scrolling
 }
 
 # Pointer (mouse) configuration
