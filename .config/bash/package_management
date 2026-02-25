@@ -1,5 +1,5 @@
 # Path to your package list file with hostname
-PKG_LIST_PATH="${HOME}/.config/pkg/pkglist_$(cat /etc/hostname).txt"
+PKG_LIST_PATH="${HOME}/.config/pkg/$(cat /etc/hostname).txt"
 
 # Install a package
 install() {
