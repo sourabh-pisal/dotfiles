@@ -4,13 +4,6 @@ export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
 # Remove duplicate entries from PATH
 export PATH=$(echo "$PATH" | awk -v RS=: -v ORS=: '!seen[$0]++' | sed 's/:$//')
 
-# Enable bash completion if available
-if [[ -f /usr/share/bash-completion/bash_completion ]]; then
-  source /usr/share/bash-completion/bash_completion
-elif [[ -f /etc/bash_completion ]]; then
-  source /etc/bash_completion
-fi
-
 # File to save command history
 HISTFILE=~/.bash_history
 HISTSIZE=1000
