@@ -1,0 +1,24 @@
+# Add custom directories to PATH
+export PATH="$HOME/bin:$HOME/.local/bin:$PATH"
+
+# Remove duplicate entries from PATH
+export PATH=$(echo "$PATH" | awk -v RS=: -v ORS=: '!seen[$0]++' | sed 's/:$//')
+
+# Enable bash completion if available
+if [[ -f /usr/share/bash-completion/bash_completion ]]; then
+  source /usr/share/bash-completion/bash_completion
+elif [[ -f /etc/bash_completion ]]; then
+  source /etc/bash_completion
+fi
+
+# File to save command history
+HISTFILE=~/.bash_history
+HISTSIZE=1000
+HISTFILESIZE=1000
+
+# Ignore commands prefixed with a space and duplicate entries
+HISTCONTROL=ignorespace:ignoredups
+
+# Append to history file instead of overwriting (equivalent to SHARE_HISTORY)
+shopt -s histappend
+PROMPT_COMMAND="history -a; history -c; history -r${PROMPT_COMMAND:+; $PROMPT_COMMAND}"
