@@ -63,4 +63,3 @@ xdg-desktop-portal
 xdg-desktop-portal-wlr
 yazi
 yt-dlp
-zsh
