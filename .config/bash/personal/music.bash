@@ -5,7 +5,7 @@ bm-add() {
 
   [[ ! -d "$bm_dir" ]] && mkdir -p "$bm_dir"
 
-  # Add update a channel mapping 
+  # Add update a channel mapping
   if [[ -z "$1" || -z "$2" ]]; then
     echo "Usage: bm-add <channel-name> <channel-link>"
     return 1
@@ -55,7 +55,7 @@ bm-play() {
   local pid=$!
   echo "$pid" > "$bm_dir/last_pid"
 
-  disown 
+  disown
 }
 
 # Stop background music
@@ -73,4 +73,3 @@ bm-stop() {
     echo "No bm-play process found."
   fi
 }
-

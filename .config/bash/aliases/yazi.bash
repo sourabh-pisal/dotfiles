@@ -1,0 +1,2 @@
+# yazi
+alias yz="yazi"

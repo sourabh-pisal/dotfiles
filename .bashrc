@@ -6,18 +6,7 @@
 [[ $- != *i* ]] && return
 
 # Source bash config files
-source ~/.config/bash/aliases
-source ~/.config/bash/audio
-source ~/.config/bash/config
-source ~/.config/bash/env
-source ~/.config/bash/fzf
-source ~/.config/bash/homebrew
-source ~/.config/bash/music
-source ~/.config/bash/networking
-source ~/.config/bash/owncloud
-source ~/.config/bash/package_management
-source ~/.config/bash/tailscale
-source ~/.config/bash/theme
+source ~/.config/bash/init.bash
 
 # Start sway
 if [ -z "$WAYLAND_DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ] ; then

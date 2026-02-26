@@ -1,0 +1,3 @@
+# nvim
+alias v="nvim"
+

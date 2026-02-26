@@ -70,4 +70,3 @@ update() {
         brew update && brew upgrade
     fi
 }
-

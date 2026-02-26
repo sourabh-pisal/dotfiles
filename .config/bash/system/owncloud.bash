@@ -60,4 +60,3 @@ owncloud-configure() {
 
     echo "Done. You can mount with: mount $mountpoint"
 }
-
