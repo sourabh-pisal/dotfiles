@@ -1,5 +1,5 @@
 # Dotfiles management
-alias dotfiles="/usr/bin/git --git-dir=$HOME/Workplace/dotfiles/ --work-tree=$HOME"
+alias dotfiles="/usr/bin/git --git-dir=$HOME/workspace/dotfiles/ --work-tree=$HOME"
 alias dtst='dotfiles status'
 alias dts='dotfiles status'
 alias dtco='dotfiles checkout'
