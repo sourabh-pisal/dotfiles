@@ -2,7 +2,9 @@ alacritty
 amd-ucode
 base
 bash-completion
+bash-language-server
 bind
+bluez-utils
 brightnessctl
 davfs2
 docker
