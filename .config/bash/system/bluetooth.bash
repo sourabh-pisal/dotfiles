@@ -49,9 +49,9 @@ bt-disconnect() {
 bt-pair() {
     local mac="$1"
     if [ -z "$mac" ]; then
-        local timeout=5
+        local timeout=10
         local selected
-        selected=$(bt-scan "$timeout" | fzf --prompt="Pair device: " --height=10 --reverse)
+        selected=$(bt-scan "$timeout" | fzf --prompt="Pair device: " --height=20 --reverse)
         [ -z "$selected" ] && return 1
         mac=$(echo "$selected" | awk '{print $1}')
     fi
