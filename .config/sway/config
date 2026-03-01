@@ -65,6 +65,9 @@ set $right l
 # Toggle wlsunset
 bindsym $mod+shift+s exec ~/.config/sway/wlsunset-toggle
 
+# Toggle screen on/off
+bindsym $mod+Shift+Escape exec ~/.config/sway/dpms-toggle
+
 # Brightness control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
