@@ -16,7 +16,6 @@ fwupd
 fzf
 gcc
 git
-gradle
 gwenview
 htop
 jq
