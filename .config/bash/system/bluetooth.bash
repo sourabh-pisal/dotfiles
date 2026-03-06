@@ -16,7 +16,7 @@ bt-status() {
 }
 
 bt-scan() {
-    local timeout=10
+    local timeout=15
 
     local found
     found=$(bluetoothctl --timeout "$timeout" scan on 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "^\[NEW\] Device" | awk '{print $3, substr($0, index($0,$4))}')
@@ -49,9 +49,8 @@ bt-disconnect() {
 bt-pair() {
     local mac="$1"
     if [ -z "$mac" ]; then
-        local timeout=10
         local selected
-        selected=$(bt-scan "$timeout" | fzf --prompt="Pair device: " --height=20 --reverse)
+        selected=$(bt-scan | fzf --prompt="Pair device: " --height=20 --reverse)
         [ -z "$selected" ] && return 1
         mac=$(echo "$selected" | awk '{print $1}')
     fi
