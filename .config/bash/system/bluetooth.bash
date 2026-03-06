@@ -16,7 +16,7 @@ bt-status() {
 }
 
 bt-scan() {
-    local timeout=5
+    local timeout=10
 
     local found
     found=$(bluetoothctl --timeout "$timeout" scan on 2>&1 | sed 's/\x1b\[[0-9;]*m//g' | grep -E "^\[NEW\] Device" | awk '{print $3, substr($0, index($0,$4))}')
