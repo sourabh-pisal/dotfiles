@@ -24,4 +24,4 @@ export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS \
 "
 
 # Source FZF integration
-eval "$(fzf --bash)"
+command -v fzf >/dev/null && eval "$(fzf --bash)"
