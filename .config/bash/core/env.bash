@@ -1,8 +1,8 @@
 # Set the default editor
 set -o vi
 
-export VISUAL=nvim
-export EDITOR=nvim
+export EDITOR=$(command -v nvim >/dev/null 2>&1 && echo nvim || echo vim)
+export VISUAL=$EDITOR
 export TERM=xterm-256color
 
 # Node.js
