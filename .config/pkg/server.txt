@@ -1,0 +1,4 @@
+docker.io
+docker-compose
+vim
+tmux
