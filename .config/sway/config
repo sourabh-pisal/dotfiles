@@ -83,25 +83,28 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Print screen
-bindsym $mod+Shift+p exec grim ~/pictures/screenshot-$(date +%Y%m%d-%H%M%S).png
+bindsym $mod+shift+p exec grim ~/pictures/screenshot-$(date +%Y%m%d-%H%M%S).png
 
 # Show notification center
-bindsym $mod+Shift+n exec swaync-client -t -sw
+bindsym $mod+shift+n exec swaync-client -t -sw
 
 # Lock screen
-bindsym $mod+Shift+w exec swaylock -f -c 000000 -i $wallpaper
+bindsym $mod+shift+w exec swaylock -f -c 000000 -i $wallpaper
 
 # Exit options with swaynag
-bindsym $mod+Shift+x exec swaynag -t warning -m 'Exit Sway?' -B 'Logout' 'swaymsg exit' -B 'Reboot' 'sudo reboot' -B 'Shutdown' 'sudo shutdown -h now' -B 'Suspend' 'systemctl suspend'
+bindsym $mod+shift+x exec swaynag -t warning -m 'Exit Sway?' -B 'Logout' 'swaymsg exit' -B 'Reboot' 'sudo reboot' -B 'Shutdown' 'sudo shutdown -h now' -B 'Suspend' 'systemctl suspend'
+
+# Put system to standby
+bindsym $mod+shift+z exec systemctl suspend
 
 # Exit Sway
-bindsym $mod+Shift+e exec swaymsg exit
+bindsym $mod+shift+e exec swaymsg exit
 
 # Launch terminal
 bindsym $mod+Return exec $term
 
 # Kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+shift+q kill
 
 # Start application launcher
 bindsym $mod+d exec $menu
@@ -110,7 +113,7 @@ bindsym $mod+d exec $menu
 floating_modifier $mod normal
 
 # Reload configuration
-bindsym $mod+Shift+c reload
+bindsym $mod+shift+c reload
 
 ################################################################################
 #                            Window Movement & Focus                           #
@@ -121,11 +124,11 @@ bindsym $mod+$down focus down
 bindsym $mod+$up focus up
 bindsym $mod+$right focus right
 
-# Move focused window with Shift key
-bindsym $mod+Shift+$left move left
-bindsym $mod+Shift+$down move down
-bindsym $mod+Shift+$up move up
-bindsym $mod+Shift+$right move right
+# Move focused window with shift key
+bindsym $mod+shift+$left move left
+bindsym $mod+shift+$down move down
+bindsym $mod+shift+$up move up
+bindsym $mod+shift+$right move right
 
 ################################################################################
 #                            Workspace Management                              #
@@ -143,16 +146,16 @@ bindsym $mod+9 workspace number 9
 bindsym $mod+0 workspace number 10
 
 # Move focused container to specific workspace
-bindsym $mod+Shift+1 move container to workspace number 1; workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2; workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3; workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4; workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5; workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6; workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7; workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8; workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9; workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10; workspace number 10
+bindsym $mod+shift+1 move container to workspace number 1; workspace number 1
+bindsym $mod+shift+2 move container to workspace number 2; workspace number 2
+bindsym $mod+shift+3 move container to workspace number 3; workspace number 3
+bindsym $mod+shift+4 move container to workspace number 4; workspace number 4
+bindsym $mod+shift+5 move container to workspace number 5; workspace number 5
+bindsym $mod+shift+6 move container to workspace number 6; workspace number 6
+bindsym $mod+shift+7 move container to workspace number 7; workspace number 7
+bindsym $mod+shift+8 move container to workspace number 8; workspace number 8
+bindsym $mod+shift+9 move container to workspace number 9; workspace number 9
+bindsym $mod+shift+0 move container to workspace number 10; workspace number 10
 
 ################################################################################
 #                            Layout and Fullscreen                            #
@@ -168,7 +171,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen
 
 # Toggle between floating and tiling mode
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+shift+space floating toggle
 
 # Swap focus between tiling and floating areas
 bindsym $mod+space focus mode_toggle
@@ -184,7 +187,7 @@ mode "resize" {
 
     # Return to default mode
     bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -205,7 +208,7 @@ bindswitch --reload --locked lid:on  exec "swaymsg output eDP-1 disable"
 bindswitch --reload --locked lid:off exec "swaymsg output eDP-1 enable"
 
 # toggle internal monitor
-bindsym $mod+Shift+Escape exec ~/.config/sway/laptop-display-toggle
+bindsym $mod+shift+escape exec ~/.config/sway/laptop-display-toggle
 
 ################################################################################
 #                            Input Configuration                              #
