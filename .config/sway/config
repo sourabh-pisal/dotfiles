@@ -197,10 +197,8 @@ bindsym $mod+r mode "resize"
 # Set background image for outputs
 output * bg $wallpaper fill
 
-# Framework laptop 13 set display scale and color profile
-output "BOE NE135A1M-NY1 Unknown" scale 2
+# set display scale and color profile
 output "BOE NE135A1M-NY1 Unknown" color_profile icc ~/.config/sway/BOE_NE135A1M_NY1.icc
-
 output "Dell Inc. DELL P2419HC BBSXK03" color_profile icc ~/.config/sway/P2419HC.icm
 
 # turn off monitor if lid is closed
