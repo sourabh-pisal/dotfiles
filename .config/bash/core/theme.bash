@@ -15,7 +15,7 @@ build_prompt() {
     local ARROW_COLOR="\e[32m"
     [ $EXIT -ne 0 ] && ARROW_COLOR="\e[31m"
 
-    PS1="\[${ARROW_COLOR}\]➜  \[\e[36m\]\W\[\e[0m\]$(  __git_info)\[\e[0m\] "
+    PS1="\[\e[33m\]\u\[\e[0m\]@\[\e[35m\]\h\[\e[0m\] \[${ARROW_COLOR}\]➜ \[\e[36m\]\W\[\e[0m\]$(__git_info)\[\e[0m\] "
 }
 
 PROMPT_COMMAND=build_prompt
