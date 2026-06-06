@@ -1,9 +1,9 @@
 vim.pack.add({
-  'https://github.com/nvim-lua/plenary.nvim',
-  'https://github.com/williamboman/mason.nvim',
-  'https://github.com/williamboman/mason-lspconfig.nvim',
-  'https://github.com/nvimtools/none-ls.nvim',
-  'https://github.com/neovim/nvim-lspconfig',
+	"https://github.com/nvim-lua/plenary.nvim",
+	"https://github.com/williamboman/mason.nvim",
+	"https://github.com/williamboman/mason-lspconfig.nvim",
+	"https://github.com/nvimtools/none-ls.nvim",
+	"https://github.com/neovim/nvim-lspconfig",
 })
 
 require("mason").setup()
@@ -11,10 +11,10 @@ require("mason-lspconfig").setup({ auto_install = true })
 
 local null_ls = require("null-ls")
 null_ls.setup({
-  sources = {
-    null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.prettier,
-  },
+	sources = {
+		null_ls.builtins.formatting.stylua,
+		null_ls.builtins.formatting.prettier,
+	},
 })
 
 vim.lsp.enable("lua_ls")
@@ -23,13 +23,13 @@ vim.lsp.enable("rust_analyzer")
 vim.lsp.enable("bashls")
 
 vim.lsp.config("eslint", {
-  settings = {
-    codeActionOnSave = {
-      enable = true,
-      mode = "all",
-    },
-    format = true,
-  },
+	settings = {
+		codeActionOnSave = {
+			enable = true,
+			mode = "all",
+		},
+		format = true,
+	},
 })
 vim.lsp.enable("eslint")
 

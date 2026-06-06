@@ -60,10 +60,10 @@ vim.keymap.set("n", "<C-e>", "5<C-e>")
 vim.keymap.set("n", "<C-y>", "5<C-y>")
 
 -- yank/paste to clipboard
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>p", "\"+p")
+vim.keymap.set("n", "<leader>y", '"+y')
+vim.keymap.set("v", "<leader>y", '"+y')
+vim.keymap.set("n", "<leader>p", '"+p')
 
 -- delete into void
-vim.keymap.set("n", "<leader>d", "\"_d")
-vim.keymap.set("v", "<leader>d", "\"_d")
+vim.keymap.set("n", "<leader>d", '"_d')
+vim.keymap.set("v", "<leader>d", '"_d')
