@@ -7,7 +7,21 @@ vim.pack.add({
 })
 
 require("mason").setup()
-require("mason-lspconfig").setup({ auto_install = true })
+require("mason-lspconfig").setup({
+	auto_install = true,
+	ensure_installed = { "lua_ls" },
+})
+
+-- ensure non-LSP mason tools are installed
+local registry = require("mason-registry")
+registry.refresh(function()
+	for _, name in ipairs({ "stylua" }) do
+		local pkg = registry.get_package(name)
+		if not pkg:is_installed() then
+			pkg:install()
+		end
+	end
+end)
 
 local null_ls = require("null-ls")
 null_ls.setup({
